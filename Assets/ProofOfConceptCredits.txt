@@ -1,0 +1,45 @@
+Proof of Concept (Credits):
+Sound Effects:
+Light Switch	-	https://www.freesound.org/people/HunteR4708/sounds/256835/
+Paper Flip		-	https://www.freesound.org/people/gynation/sounds/82377/
+Door Swish		-	https://www.freesound.org/people/marcgp13/sounds/185756/
+Paper Searching -	https://www.freesound.org/people/OwlStorm/sounds/320148/
+Five Beeps		-	https://www.freesound.org/people/kwahmah_02/sounds/246332/
+Dialing Tones	-	https://www.freesound.org/people/IFartInUrGeneralDirection/sounds/66210/
+Lever			-	https://www.freesound.org/people/D%20W/sounds/144248/
+Lever Button	-	https://www.freesound.org/people/GreekIrish/sounds/254713/
+Wire Cutters	-	https://www.freesound.org/people/plingativator/sounds/188923/
+Short Circuit	-	https://www.freesound.org/people/mad-monkey/sounds/66692/
+Scanner			-	https://www.freesound.org/people/THE_bizniss/sounds/39313/
+Door Beep		-	https://www.freesound.org/people/pan14/sounds/263133/
+Four Beeps		-	https://www.freesound.org/people/jobro/sounds/33784/
+Padlock			-	https://www.freesound.org/people/Adam_N/sounds/164670/
+Unlocking		-	https://www.freesound.org/people/keweldog/sounds/181140/
+Buzzer			-	https://www.freesound.org/people/discokingmusic/sounds/271389/
+Correct			-	https://www.freesound.org/people/Bertrof/sounds/131660/
+Sequence Note	-	https://www.freesound.org/people/thomasjaunism/sounds/218459/
+Click			-	https://www.freesound.org/people/baryy/sounds/163401/
+Navigation		-	https://www.freesound.org/people/Reitanna/sounds/332668/
+Creak			-	https://www.freesound.org/people/Corsica_S/sounds/24247/
+
+Songs:
+Hep Cats by Kevin MacLeod is licensed under a Creative Commons Attribution licence (https://creativecommons.org/licenses/by/4.0/)
+Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1500022
+Artist: http://incompetech.com/ 
+
+Artwork:
+Controller Buttons (A,B,X,Y):
+https://commons.wikimedia.org/wiki/File:Xbox_button_A.svg
+https://commons.wikimedia.org/wiki/File:Xbox_button_B.svg
+https://commons.wikimedia.org/wiki/File:Xbox_button_X.svg
+https://commons.wikimedia.org/wiki/File:Xbox_button_Y.svg
+Arrow - https://www.iconfinder.com/icons/211614/arrow_b_down_icon
+Lightbulb - http://simpleicon.com/light-bulb-3.html
+Camera - https://pixabay.com/p-159582/?no_redirect
+Padlock - http://www.clker.com/cliparts/B/1/y/Z/B/s/padlock-icon-hi.png
+
+Fonts:
+Blocktopia				- http://www.dafont.com/blocktopia.font
+Bebas					- http://www.dafont.com/bebas.font?back=theme
+Hammer Keys				- http://www.dafont.com/hammer-keys.font
+Traveling Typewriter	- http://www.dafont.com/traveling-typewriter.font?back=theme

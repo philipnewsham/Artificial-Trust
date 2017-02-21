@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &156548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 419458}
+  - 114: {fileID: 11428908}
+  - 114: {fileID: 11473242}
+  - 114: {fileID: 11443238}
+  - 114: {fileID: 11482772}
+  - 114: {fileID: 114000012155870090}
+  - 114: {fileID: 114000013415003234}
+  - 114: {fileID: 114000011229986512}
+  m_Layer: 0
+  m_Name: AI
+  m_TagString: AI
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419458
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11428908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e243f63028680647a0d80580e6eacc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightPower: 5
+  cameraPower: 25
+  doorLockedPower: 10
+  doorUnlockedPower: 5
+  aiSwitchButtonPower: 300
+  startingPower: 10
+  totalPower: 3000
+  powerText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_lightToggleInstantiateScript: {fileID: 0}
+  m_cameraToggleInstantiateScript: {fileID: 0}
+  m_doorToggleInstantiateScript: {fileID: 0}
+  robotBodyPasswordButtonScript: {fileID: 0}
+  aiSwitchButton: {fileID: 0}
+  powerBar: {fileID: 0}
+--- !u!114 &11443238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5817202b2f1d47545ac5bc56dfd4968c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_specificDoorScripts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  unlockingTime: 10
+  openingTime: 3
+  doorButtons: []
+  taskLogScript: {fileID: 0}
+--- !u!114 &11473242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4982b715ae5e04fb85bd0af8306849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  taskLogScript: {fileID: 0}
+  lightButtons: []
+--- !u!114 &11482772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2d0c92d6b4ff940a85724a019742c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraGameObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cameras:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  materials:
+  - {fileID: 2100000, guid: 80a1fe5d10e1d5745999cbca176c0198, type: 2}
+  - {fileID: 2100000, guid: 04296787e2cf2c34d9f41f3ae0f1f7f1, type: 2}
+  cameraLights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cameraButtons: []
+  taskLogScript: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 156548}
+  m_IsPrefabParent: 1
+--- !u!114 &114000011229986512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9558d2e883d3194db98af175fecde1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  informationString:
+  - This is the lock for the robot body, you will need to find the password, find
+    the correct positions for the switches and give the robot power before entering
+    it.
+  - 'You can toggle power on and off here, as well as locking doors which takes the
+    scientist longer to enter any room. '
+  - You can hack documents to gain information. Hacking a document doesn't take any
+    power away, but the more power you have the quicker the hack will be completed.
+  - I don't know
+  - Look through all enabled cameras, use the buttons on the side to see other views.
+  infoCanvas: {fileID: 0}
+  infoText: {fileID: 0}
+--- !u!114 &114000012155870090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3916b4b6beadd8347a6c7fea60624090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  documentText: {fileID: 0}
+  powerValue: 0
+  documentButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  docUnlockedNumber: 0300000000000000000000000000000006000000000000000000000000000000000000000000000000000000
+--- !u!114 &114000013415003234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4c976e5a0627547aef1e73ba527bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winConditions: []
+  completedTask: 1
+  scientistLoseCanvas: {fileID: 0}

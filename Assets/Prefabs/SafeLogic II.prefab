@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &152728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 476990}
+  - 114: {fileID: 11460496}
+  m_Layer: 0
+  m_Name: SafeLogic II
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476990
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11460496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6b4248686efb54d921ef7d4ddcbb2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockPanels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  starsignImage: {fileID: 0}
+  starsigns:
+  - {fileID: 21300000, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300002, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300004, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300006, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300008, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300010, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300012, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300014, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300016, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300018, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300020, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  - {fileID: 21300022, guid: d05b3b11bd8335b46bb5beb4f36465d9, type: 3}
+  passwords:
+  - 
+  - 
+  - 
+  - 
+  passwordText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  actualPassword: 
+  passwordField: {fileID: 0}
+  sequenceOrder: 00000000000000000000000000000000
+  safeCanvas: {fileID: 0}
+  safe: {fileID: 0}
+  audioClips: []
+  lockedOutPanel: {fileID: 0}
+  lockedOutText: {fileID: 0}
+  lockedOutTime: 60
+  ai: {fileID: 0}
+  scientist: {fileID: 0}
+  gameController: {fileID: 0}
+  locksText: {fileID: 0}
+  unlockButton: {fileID: 0}
+  lockOneLight: {fileID: 0}
+  lockTwoLight: {fileID: 0}
+  lockThreeLight: {fileID: 0}
+  lockLights:
+  - {fileID: 21300000, guid: 5b1a64ea234fb2343b8d0686c51280de, type: 3}
+  - {fileID: 21300000, guid: 49b611e658efbf443b686a4036f74fe3, type: 3}
+  scientistComputerScript: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 152728}
+  m_IsPrefabParent: 1

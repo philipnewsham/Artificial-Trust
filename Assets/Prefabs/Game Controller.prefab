@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &167606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 405604}
+  - 114: {fileID: 11469062}
+  - 114: {fileID: 11478566}
+  - 114: {fileID: 11405698}
+  - 114: {fileID: 11475332}
+  - 114: {fileID: 11428236}
+  - 114: {fileID: 11412756}
+  m_Layer: 0
+  m_Name: Game Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &405604
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11405698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9d0120c5980314db82854c221c5285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11412756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7bf6b1027ba0b44ac268cf4ff18190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleTimes: 
+  countingDown: 0
+  scientistLosesCanvas: {fileID: 0}
+  aiLosesCanvas: {fileID: 0}
+--- !u!114 &11428236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977ebe273a5daf448b516ced096c3bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filingCabinetScripts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  safeScript: {fileID: 0}
+  switchScripts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  threeSwitches: {fileID: 0}
+  specificDoors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  switchInfoScientist: {fileID: 0}
+  disableCameras:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lightController: {fileID: 0}
+  lightToggleInstantiateScript: {fileID: 0}
+  lightSwitchesAS: []
+  scientistComputerScript: {fileID: 0}
+  panicButton: {fileID: 0}
+  switchedOffBlackMat: {fileID: 0}
+--- !u!114 &11469062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b1ea866abd8c04687a1999d6a850bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpController: {fileID: 0}
+--- !u!114 &11475332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100ce126ab004f24abd9aa3ee705e689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receivePasswordsLocks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  receivePasswordsKeys:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ai: {fileID: 0}
+  safePasswordText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  safeLogic: {fileID: 0}
+  robotBodyPasswordButtonScript: {fileID: 0}
+--- !u!114 &11478566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57c22bcc3096d348808ca0939fe3346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchesActions:
+  - AI Blackout for 10 seconds
+  - Turns Lights Off
+  - Locks all doors
+  - Fandango
+  - Crazy Golf Challenge!
+  - Bomb Disposal
+  - Mt. Fuji
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 167606}
+  m_IsPrefabParent: 1
