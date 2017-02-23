@@ -37,6 +37,7 @@ Arrow - https://www.iconfinder.com/icons/211614/arrow_b_down_icon
 Lightbulb - http://simpleicon.com/light-bulb-3.html
 Camera - https://pixabay.com/p-159582/?no_redirect
 Padlock - http://www.clker.com/cliparts/B/1/y/Z/B/s/padlock-icon-hi.png
+folder - http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/document-icon.png
 
 Fonts:
 Blocktopia				- http://www.dafont.com/blocktopia.font
