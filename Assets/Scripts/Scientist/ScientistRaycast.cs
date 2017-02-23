@@ -29,9 +29,9 @@ public class ScientistRaycast : MonoBehaviour {
         Vector3 origin = transform.position;
         Vector3 direction = transform.TransformDirection(Vector3.forward);
         m_ray = new Ray(origin, direction);
-        if (Physics.Raycast(m_ray, out m_hit))
+        if (Physics.Raycast(m_ray, out m_hit, distance))
         {
-            if(m_hit.collider.tag == "Interactable" && m_hit.distance <= distance)
+            if(m_hit.collider.tag == "Interactable" /*&& m_hit.distance <= distance*/)
             {
                 //print("hit");
                 interactText.text = "Interact!";

@@ -41,6 +41,9 @@ public class CameraController : MonoBehaviour
         m_cameraPower += newPower;
     }
 
+    public Text[] cameraText;
+    public GameObject[] cameraRecImage;
+
     public void CameraSwitch(int camNo)
     {
         //print("Message Recieved " + camNo);
@@ -51,6 +54,8 @@ public class CameraController : MonoBehaviour
             m_camerasOn[camNo] = !m_camerasOn[camNo];
             m_aiPowerScript.PowerExchange(m_cameraPower);
             taskLogScript.UpdateText("Camera", camNo, 1);
+            cameraText[camNo].text = "Offline";
+            cameraRecImage[camNo].SetActive(false);
         }
         else
         {
@@ -61,6 +66,8 @@ public class CameraController : MonoBehaviour
                 m_camerasOn[camNo] = !m_camerasOn[camNo];
                 m_aiPowerScript.PowerExchange(-m_cameraPower);
                 taskLogScript.UpdateText("Camera", camNo, 0);
+                cameraText[camNo].text = "Recording";
+                cameraRecImage[camNo].SetActive(true);
             }
             else
             {

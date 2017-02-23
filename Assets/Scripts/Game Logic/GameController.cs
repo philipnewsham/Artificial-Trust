@@ -34,6 +34,12 @@ public class GameController : MonoBehaviour
         {
             safeScript.Interact();
         }
+        if(objectID >= 1 && objectID <= 3)
+        {
+            filingCabinetScripts[objectID - 1].Interact();
+        }
+
+        /*
         if(objectID == 1)
         {
             filingCabinetScripts[0].Interact();
@@ -46,6 +52,14 @@ public class GameController : MonoBehaviour
         {
             filingCabinetScripts[2].Interact();
         }
+        */
+
+        if(objectID >= 4 && objectID <= 6)
+        {
+            switchScripts[objectID - 4].Interact();
+        }
+
+        /*
         if (objectID == 4)
         {
             switchScripts[0].Interact();
@@ -58,6 +72,8 @@ public class GameController : MonoBehaviour
         {
             switchScripts[2].Interact();
         }
+        */
+
         if(objectID == 7)
         {
             threeSwitches.Interact();
