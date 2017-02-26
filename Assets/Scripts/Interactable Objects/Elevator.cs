@@ -145,7 +145,7 @@ public class Elevator : MonoBehaviour
         {
             if (other.gameObject.tag == "Scientist")
             {
-                print("Scientist");
+                //print("Scientist");
                 if (m_scientistWinScript.completedTask)
                 {
                     ElevatorOn("Scientist");

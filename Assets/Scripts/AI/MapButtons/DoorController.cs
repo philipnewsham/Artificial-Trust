@@ -33,9 +33,9 @@ public class DoorController : MonoBehaviour
 
         for (int i = 0; i < m_doorsLength; i++)
         {
-            if (i != 5)
+            if (i != 4)
             {
-                m_locked[i] = false;
+                m_locked[i] = true;
                 m_powered[i] = true;
                 m_lockedOutAction[i] = false;
                 m_doorStates[i] = 1;

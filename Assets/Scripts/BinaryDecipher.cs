@@ -78,7 +78,7 @@ public class BinaryDecipher : MonoBehaviour
 		{
 			if (text == m_binaryAlphabet [i]) 
 			{
-				Debug.LogFormat ("This is the {0} letter of the alphabet", i + 1);
+				//Debug.LogFormat ("This is the {0} letter of the alphabet", i + 1);
 				m_currentLetter = i;
 			}
 		}
@@ -116,7 +116,7 @@ public class BinaryDecipher : MonoBehaviour
                 showLetterText.text = m_alphabet[i];
 				if (Input.inputString == m_alphabet [m_currentLetter]) 
 				{
-					print ("right letter!");
+					//print ("right letter!");
                     m_correctLetter = true;
 					//KeyCorrect ();
 				} 
@@ -142,7 +142,7 @@ public class BinaryDecipher : MonoBehaviour
         }
         showLetterText.text = "";
     }
-
+    int m_lettersCorrect = 25;
 	void KeyCorrect()
 	{
         
@@ -151,9 +151,24 @@ public class BinaryDecipher : MonoBehaviour
             if(buttons[i].GetComponentInChildren<Text>().text == m_binaryAlphabet[m_currentLetter])
             {
                 buttons[i].GetComponentInChildren<Text>().text = m_alphabet[m_currentLetter];
+                buttons[i].interactable = false;
             }
         }
+        m_lettersCorrect += 1;
+        if(m_lettersCorrect == 26)
+        {
+            UnlockNextPuzzle();
+        }
 	}
+    public DoorController doorController;
+    public Button nextPuzzleButton;
+    void UnlockNextPuzzle()
+    {
+        //print("unlocknextpuzzle");
+        doorController.Locking(5);
+        doorController.Locking(1);
+        nextPuzzleButton.interactable = true;
+    }
 
 	void KeyWrong()
 	{

@@ -16,7 +16,7 @@ public class SendButtonText : MonoBehaviour
 	public void ClickedButton()
 	{
 		m_buttonText = gameObject.GetComponentInChildren<Text> ().text;
-		print (m_buttonText);
+		//print (m_buttonText);
 		m_binaryDecipherScript.ClickedButton (m_buttonText);
 	}
 }

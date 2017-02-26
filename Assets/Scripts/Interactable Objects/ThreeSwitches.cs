@@ -81,7 +81,7 @@ public class ThreeSwitches : MonoBehaviour {
             if(i == 0)
             {
                 m_currentNumber = m_actionNumber[i];
-                print(m_currentNumber);
+                //print(m_currentNumber);
             }
         }
         ScientistSwitchInfo();

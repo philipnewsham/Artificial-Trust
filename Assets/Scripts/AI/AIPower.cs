@@ -70,7 +70,7 @@ public class AIPower : MonoBehaviour
 	void UpdatePowerBar()
 	{
 		float totalPow = m_totalPower;
-		print (m_totalPower + " / " + m_maxpower + " = " + totalPow / m_maxpower);
+		//print (m_totalPower + " / " + m_maxpower + " = " + totalPow / m_maxpower);
 		powerBar.fillAmount = totalPow / m_maxpower;
 	}
 
