@@ -25,6 +25,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private string m_lookVertical;
 
         private int m_yLookMult;
+
+		public bool alternateControlSchemeScreen;
+		public bool alternateControlSchemeMouse;
+
         public void Init(Transform character, Transform camera)
         {
             m_CharacterTargetRot = character.localRotation;
@@ -46,11 +50,29 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+		public void ScreenButtonRotation(float xSpeed)
+		{
+			yRot = xSpeed * YSensitivity;
+		}
+
+		float yRot;
+		float xRot;
+
         public void LookRotation(Transform character, Transform camera)
         {
-
-            float yRot = CrossPlatformInputManager.GetAxis(m_lookHorizontal) * XSensitivity;
-            float xRot = CrossPlatformInputManager.GetAxis(m_lookVertical) * YSensitivity * m_yLookMult;
+			if (!alternateControlSchemeScreen) 
+			{
+				if (alternateControlSchemeMouse) 
+				{
+					yRot = CrossPlatformInputManager.GetAxis ("Mouse X") * XSensitivity;
+					xRot = CrossPlatformInputManager.GetAxis ("Mouse Y") * -YSensitivity * m_yLookMult;
+				} 
+				else 
+				{
+					yRot = CrossPlatformInputManager.GetAxis (m_lookHorizontal) * XSensitivity;
+					xRot = CrossPlatformInputManager.GetAxis (m_lookVertical) * YSensitivity * m_yLookMult;
+				}
+			}
 
             m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
             m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);

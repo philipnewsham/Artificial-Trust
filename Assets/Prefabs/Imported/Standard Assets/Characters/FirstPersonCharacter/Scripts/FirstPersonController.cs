@@ -23,7 +23,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
         [SerializeField] private float m_GravityMultiplier;
-        [SerializeField] private MouseLook m_MouseLook;
+        public MouseLook m_MouseLook;
         [SerializeField] private bool m_UseFovKick;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
         [SerializeField] private bool m_UseHeadBob;
@@ -47,6 +47,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+
+		public bool alternativeControlMouse;
         // Use this for initialization
         private void Start()
         {
@@ -72,7 +74,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
-
+			
 
         // Update is called once per frame
         private void Update()
@@ -220,12 +222,38 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Camera.transform.localPosition = newCameraPosition;
         }
 
+		public bool alternativeControlScreen;
+		public float touchVertical;
+		public float vertical;
+
+		public void VirtualControlMovement(float touchSpeed)
+		{
+			touchVertical = touchSpeed;
+		}
 
         private void GetInput(out float speed)
         {
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis(m_moveHorizontal);
-            float vertical = CrossPlatformInputManager.GetAxis(m_moveVertical);
+			if (alternativeControlMouse)
+			{
+				if (Input.GetButtonDown("Fire1"))
+				{
+					vertical = 1f;
+				}
+				else if (Input.GetButtonUp("Fire1"))
+				{
+					vertical = 0f;
+				}
+			}
+			if(alternativeControlScreen)
+			{
+				vertical = touchVertical;
+			}
+			if(!alternativeControlScreen && !alternativeControlMouse)
+			{ 
+				vertical = CrossPlatformInputManager.GetAxis("Vertical");
+			}
 
             bool waswalking = m_IsWalking;
 
