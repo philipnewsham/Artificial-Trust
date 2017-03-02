@@ -65,7 +65,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				if (alternateControlSchemeMouse) 
 				{
 					yRot = CrossPlatformInputManager.GetAxis ("Mouse X") * XSensitivity;
-					xRot = CrossPlatformInputManager.GetAxis ("Mouse Y") * -YSensitivity * m_yLookMult;
+					//xRot = CrossPlatformInputManager.GetAxis ("Mouse Y") * -YSensitivity * m_yLookMult;
 				} 
 				else 
 				{
