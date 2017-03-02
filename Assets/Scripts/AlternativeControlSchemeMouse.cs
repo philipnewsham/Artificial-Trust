@@ -21,6 +21,14 @@ public class AlternativeControlSchemeMouse : MonoBehaviour
         mouseSpeed = Mathf.FloorToInt(mouseSensitivitySlider.value);
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Selected();
+        }
+    }
+
     public void Selected()
     {
         m_isSelected = !m_isSelected;
@@ -28,10 +36,10 @@ public class AlternativeControlSchemeMouse : MonoBehaviour
         {
             //changing options to move with only mouse
             m_mouseLook.XSensitivity = mouseSpeed;
-			m_mouseLook.alternateControlSchemeMouse = true;
             m_mouseLook.MinimumX = 0f;
             m_mouseLook.MaximumX = 0f;
             m_firstPersonControllerScript.alternativeControlMouse = true;
+            m_mouseLook.alternateControlSchemeMouse = true;
         }
         else
         {

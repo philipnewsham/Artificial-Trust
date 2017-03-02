@@ -155,7 +155,7 @@ public class BinaryDecipher : MonoBehaviour
             }
         }
         m_lettersCorrect += 1;
-        if(m_lettersCorrect == 26)
+        if(m_lettersCorrect == 27)
         {
             UnlockNextPuzzle();
         }

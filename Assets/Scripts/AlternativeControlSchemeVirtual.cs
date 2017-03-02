@@ -15,16 +15,32 @@ public class AlternativeControlSchemeVirtual : MonoBehaviour
         m_mouseLook = m_firstPersonControllerScript.m_MouseLook;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Selected();
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            m_isSelected = true;
+            Selected();
+        }
+    }
+
     public void Looking(float xSpeed)
     {
         m_mouseLook.ScreenButtonRotation(xSpeed);
     }
-
+    public GameObject virtualJoystick;
     public void Selected()
     {
         m_isSelected = !m_isSelected;
         if (m_isSelected)
         {
+            virtualJoystick.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             //changing options to move with on screen buttons
             m_mouseLook.XSensitivity = mouseSpeed;
             m_mouseLook.MinimumX = 0f;
@@ -35,6 +51,7 @@ public class AlternativeControlSchemeVirtual : MonoBehaviour
         }
         else
         {
+            virtualJoystick.SetActive(false);
             m_mouseLook.XSensitivity = 2;
             m_mouseLook.MinimumX = -90f;
             m_mouseLook.MaximumX = 90f;

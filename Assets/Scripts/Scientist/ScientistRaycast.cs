@@ -91,6 +91,10 @@ public class ScientistRaycast : MonoBehaviour {
             m_showingRules = !m_showingRules;
             scientistRules.SetActive(m_showingRules);
         }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SelectHoverLook();
+        }
 
 		if (m_countingDown) 
 		{

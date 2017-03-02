@@ -10,8 +10,10 @@ public class GameController : MonoBehaviour
     public SpecificDoor[] specificDoors;
     public SwitchesInfoScientist switchInfoScientist;
     public DisableCamera[] disableCameras;
+    public CameraButton[] cameraButtons;
     public LightController lightController;
     public LightToggleInstantiate lightToggleInstantiateScript;
+    public LightButton[] lightButtons;
     public AudioSource[] lightSwitchesAS;
     public ScientistComputer scientistComputerScript;
 
@@ -34,54 +36,27 @@ public class GameController : MonoBehaviour
         {
             safeScript.Interact();
         }
+
         if(objectID >= 1 && objectID <= 3)
         {
             filingCabinetScripts[objectID - 1].Interact();
         }
-
-        /*
-        if(objectID == 1)
-        {
-            filingCabinetScripts[0].Interact();
-        }
-        if(objectID == 2)
-        {
-            filingCabinetScripts[1].Interact();
-        }
-        if (objectID == 3)
-        {
-            filingCabinetScripts[2].Interact();
-        }
-        */
 
         if(objectID >= 4 && objectID <= 6)
         {
             switchScripts[objectID - 4].Interact();
         }
 
-        /*
-        if (objectID == 4)
-        {
-            switchScripts[0].Interact();
-        }
-        if (objectID == 5)
-        {
-            switchScripts[1].Interact();
-        }
-        if (objectID == 6)
-        {
-            switchScripts[2].Interact();
-        }
-        */
-
         if(objectID == 7)
         {
             threeSwitches.Interact();
         }
+
         if(objectID == 8)
         {
             switchInfoScientist.Interact();
         }
+
         if(objectID == 9)
         {
             if (!m_panicButtonPressed)
@@ -99,12 +74,14 @@ public class GameController : MonoBehaviour
         }
         if(objectID >= 20 && objectID <= 29)
         {
-            lightToggleInstantiateScript.LightToggled(objectID - 20);
+            lightButtons[objectID - 20].Power();
+            //lightToggleInstantiateScript.LightToggled(objectID - 20);
             lightSwitchesAS[objectID - 20].Play();
         }
         if (objectID >= 30 && objectID <= 39)
         {
-            disableCameras[objectID - 30].Interact();
+            cameraButtons[objectID - 30].Power();
+            //disableCameras[objectID - 30].Interact();
         }
         if(objectID == 40)
         {
