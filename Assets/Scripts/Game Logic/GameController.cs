@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     public Material switchedOffBlackMat;
     private bool m_panicButtonPressed = false;
 
+    public ScientistRaycast scientistRaycast;
+
     void Start()
     {
         m_panicButtonAS = panicButton.GetComponent<AudioSource>();
@@ -86,6 +88,10 @@ public class GameController : MonoBehaviour
         if(objectID == 40)
         {
             scientistComputerScript.Interact();
+        }
+        if(objectID == 41)
+        {
+            scientistRaycast.CheckMap();
         }
     }
 

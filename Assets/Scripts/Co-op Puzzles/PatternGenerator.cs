@@ -32,6 +32,7 @@ public class PatternGenerator : MonoBehaviour
 
     public Button nextPuzzleButton;
     private DoorController m_doorController;
+    private bool[] m_isCorrect = new bool[3];
     void ChooseRandomGroup()
     {
         m_doorController = GetComponent<BinaryDecipher>().doorController;
@@ -101,17 +102,18 @@ public class PatternGenerator : MonoBehaviour
                 m_currentRandInt = Random.Range(0, 4);
                 if (j != m_randomPair)
                 {
-                    m_groupPairsA[i] += m_firstPairs[m_currentRandInt];
-                    m_groupPairsB[i] += m_secondPairs[m_currentRandInt];
+                    
+                    m_groupPairsA[i] += string.Format(" {0}",m_firstPairs[m_currentRandInt]);
+                    m_groupPairsB[i] += string.Format(" {0}",m_secondPairs[m_currentRandInt]);
                 }
                 else
                 {
-                    m_groupPairsA[i] += "?";
-                    m_groupPairsB[i] += "?";
+                    m_groupPairsA[i] += " ?";
+                    m_groupPairsB[i] += " ?";
                     m_hiddenLetters[i] = m_firstPairs[m_currentRandInt];
                 }
-                m_wholePatternFirstPair += m_firstPairs[m_currentRandInt];
-                m_wholePatternSecondPair += m_secondPairs[m_currentRandInt];
+                m_wholePatternFirstPair += string.Format(" {0}", m_firstPairs[m_currentRandInt]);
+                m_wholePatternSecondPair += string.Format(" {0}", m_secondPairs[m_currentRandInt]);
             }
         }
         worldTexts[0].text = m_wholePatternFirstPair;
@@ -124,31 +126,62 @@ public class PatternGenerator : MonoBehaviour
         buttonTexts[4].text = m_groupPairsA[m_order[2]];
         buttonTexts[5].text = m_groupPairsB[m_order[2]];
     }
-
+    public Button[] pairButtons;
+    public Color32[] colours;
     public void ClickedGroup(int buttonNo)
     {
         m_buttonPressed = buttonNo;
         m_groupPicked = m_order[buttonNo];
+        for (int i = 0; i < 3; i++)
+        {
+            if(i == buttonNo)
+            {
+                buttons[i].GetComponent<Image>().color = colours[0];
+            }
+            else
+            {
+                if(m_isCorrect[i])
+                    buttons[i].GetComponent<Image>().color = colours[1];
+                else
+                    buttons[i].GetComponent<Image>().color = colours[2];
+            }
+        }
+        
+        for (int i = 0; i < 4; i++)
+        {
+            pairButtons[i].interactable = true;
+        }
     }
 
     public void ClickedPair(string letter)
     {
         if (letter == m_hiddenLetters[m_groupPicked])
         {
-           print("Correct");
-            buttons[m_buttonPressed].interactable = false;
-            m_currentCorrect += 1;
-            if(m_currentCorrect == 3)
-            {
-                nextPuzzleButton.interactable = true;
-                m_doorController.Locking(2);
-            }
+            Correct();
         }
         else
         {
             print("Incorrect");
+            buttons[m_buttonPressed].GetComponent<Image>().color = colours[2];
             lockOutScreen.SetActive(true);
             Invoke("Unlocked", 20f);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            pairButtons[i].interactable = false;
+        }
+    }
+
+    void Correct()
+    {
+        buttons[m_buttonPressed].interactable = false;
+        buttons[m_buttonPressed].GetComponent<Image>().color = colours[1];
+        m_isCorrect[m_buttonPressed] = true;
+        m_currentCorrect += 1;
+        if (m_currentCorrect == 3)
+        {
+            nextPuzzleButton.interactable = true;
+            m_doorController.Locking(2);
         }
     }
 

@@ -88,8 +88,7 @@ public class ScientistRaycast : MonoBehaviour {
 		}
         if (Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            m_showingRules = !m_showingRules;
-            scientistRules.SetActive(m_showingRules);
+            CheckMap();
         }
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -108,7 +107,11 @@ public class ScientistRaycast : MonoBehaviour {
 			}
 		}
 	}
-
+    public void CheckMap()
+    {
+        m_showingRules = !m_showingRules;
+        scientistRules.SetActive(m_showingRules);
+    }
 	public void Interacted()
 	{
 		if (m_isLooking) 
