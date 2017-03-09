@@ -252,7 +252,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}
 			if(!alternativeControlScreen && !alternativeControlMouse)
 			{ 
-				vertical = CrossPlatformInputManager.GetAxis("Vertical");
+				vertical = CrossPlatformInputManager.GetAxis(m_moveVertical);
 			}
 
             bool waswalking = m_IsWalking;

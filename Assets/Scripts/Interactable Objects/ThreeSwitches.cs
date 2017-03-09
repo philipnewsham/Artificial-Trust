@@ -135,13 +135,13 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[0];
-                print("1,1,1");
+               // print("1,1,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[1];
                 //m_robotBodyScript.SwitchesSet();
-                print("1,1,0");
+               // print("1,1,0");
             }
         }
         else
@@ -149,12 +149,12 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[2];
-                print("1,0,1");
+               // print("1,0,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[3];
-                print("1,0,0");
+                //print("1,0,0");
             }
         }
         print(m_currentNumber);
@@ -168,12 +168,12 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[4];
-                print("0,1,1");
+                //print("0,1,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[5];
-                print("0,1,0");
+                //print("0,1,0");
             }
         }
         else
@@ -181,12 +181,12 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[6];
-                print("0,0,1");
+                //print("0,0,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[7];
-                print("0,0,0");
+               //print("0,0,0");
             }
         }
         print(m_currentNumber);

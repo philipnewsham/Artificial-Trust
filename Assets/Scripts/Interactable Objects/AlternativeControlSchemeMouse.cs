@@ -16,6 +16,7 @@ public class AlternativeControlSchemeMouse : MonoBehaviour
 	}
 
     public Slider mouseSensitivitySlider;
+
     public void ChangeMouseSensitivity()
     {
         mouseSpeed = Mathf.FloorToInt(mouseSensitivitySlider.value);
@@ -27,6 +28,14 @@ public class AlternativeControlSchemeMouse : MonoBehaviour
         {
             Selected();
         }
+		if (Input.GetKeyDown (KeyCode.KeypadPlus)) {
+			mouseSpeed += 1;
+			m_mouseLook.XSensitivity = mouseSpeed;
+		}
+		if (Input.GetKeyDown (KeyCode.Minus)) {
+			mouseSpeed -= 1;
+			m_mouseLook.XSensitivity = mouseSpeed;
+		}
     }
 
     public void Selected()

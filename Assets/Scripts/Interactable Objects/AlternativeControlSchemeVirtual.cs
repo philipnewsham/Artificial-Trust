@@ -8,7 +8,7 @@ public class AlternativeControlSchemeVirtual : MonoBehaviour
     public int mouseSpeed;
     private bool m_isSelected;
     private MouseLook m_mouseLook;
-
+	public float lookSensitivity;
     void Start()
     {
         m_firstPersonControllerScript = GetComponent<FirstPersonController>();
@@ -26,13 +26,22 @@ public class AlternativeControlSchemeVirtual : MonoBehaviour
             m_isSelected = true;
             Selected();
         }
+
+		if (Input.GetKeyDown (KeyCode.KeypadPlus)) {
+			lookSensitivity += 0.1f;
+		}
+		if (Input.GetKeyDown (KeyCode.KeypadMinus)) {
+			lookSensitivity -= 0.1f;
+		}
     }
 
     public void Looking(float xSpeed)
     {
-        m_mouseLook.ScreenButtonRotation(xSpeed);
+		m_mouseLook.ScreenButtonRotation(xSpeed * lookSensitivity);
     }
+
     public GameObject virtualJoystick;
+
     public void Selected()
     {
         m_isSelected = !m_isSelected;
