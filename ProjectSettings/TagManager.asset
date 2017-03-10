@@ -7,6 +7,7 @@ TagManager:
   - Interactable
   - AI
   - Scientist
+  - Room
   layers:
   - Default
   - TransparentFX
