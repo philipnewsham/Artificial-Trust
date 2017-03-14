@@ -38,7 +38,7 @@ public class GeometricView : MonoBehaviour
 			Incorrect ();
 		}
 	}
-
+    public Button nextButton;
 	void Correct()
 	{
 		for (int i = 0; i < 3; i++) 
@@ -47,8 +47,9 @@ public class GeometricView : MonoBehaviour
 		}
 		m_doorController.Locking (0);
 		m_doorController.Locking (3);
-		puzzleAICanvas.SetActive (false);
-		mainAICanvas.SetActive (true);
+        nextButton.interactable = true;
+		//puzzleAICanvas.SetActive (false);
+		//mainAICanvas.SetActive (true);
 	}
 
 	void Incorrect()

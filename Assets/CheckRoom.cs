@@ -34,9 +34,9 @@ public class CheckRoom : MonoBehaviour
     main:
 
     */
-	
+    bool m_introObjectives;
 	// Update is called once per frame
-	void OnTriggerEnter (Collider other)
+	void OnTriggerEnter (Collider other)    
     {
 	    if(other.gameObject.tag == "Room")
         {
@@ -49,6 +49,16 @@ public class CheckRoom : MonoBehaviour
             }
 
             if(m_currentObjectiveInt == 2 && roomNo == 1)
+            {
+                UpdateObjectiveText();
+            }
+
+            if(m_currentObjectiveInt == 4 && roomNo == 2)
+            {
+                UpdateObjectiveText();
+            }
+
+            if(m_currentObjectiveInt == (roomNo/2) && m_introObjectives)
             {
                 UpdateObjectiveText();
             }
