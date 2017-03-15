@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class LightController : MonoBehaviour {
+public class LightController : MonoBehaviour
+{
     public Light[] lights;
     private bool[] m_lightOn;
     private AIPower m_aiPowerScript;
@@ -16,12 +17,14 @@ public class LightController : MonoBehaviour {
         {
             m_lightOn[i] = true;
         }
+        CheckLights();
 	}
 
     public void CurrentLightPower(int newPower)
     {
         m_lightPower += newPower;
     }
+    public ScientistObjectives scientistObjectiveScript;
 
     public void LightSwitch(int lightNo)
     {
@@ -43,6 +46,21 @@ public class LightController : MonoBehaviour {
                 taskLogScript.UpdateText("Light", lightNo, 0);
             }
         }
+        CheckLights();
+    }
+
+    void CheckLights()
+    {
+        int lightsOnInt = 0;
+
+        for (int i = 0; i < m_lightOn.Length; i++)
+        {
+            if (m_lightOn[i])
+            {
+                lightsOnInt += 1;
+            }
+        }
+        scientistObjectiveScript.CheckLights(lightsOnInt);
     }
 
 	public Button[] lightButtons;
