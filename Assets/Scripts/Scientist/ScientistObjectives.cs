@@ -12,7 +12,7 @@ public class ScientistObjectives : MonoBehaviour
     string m_subGoalOneText;
 
     string[] m_lightLocations = new string[8] {"Archive Room","Dr. Kirkoff's Office","Small Office","Server Room","Main Laboratory","Corridor One","Corridor Two","Corridor Three"};
-
+    private string[] m_roomName = new string[9] { "Main Laboratory", "Small Office", "Server Room", "AI HUB", "Archives", "Dr. Kirkoff's Office", "Corridor One", "Corridor Two", "Corridor Three" };
     int m_firstLight;
     int m_secondLight;
     float m_seconds;
@@ -95,7 +95,7 @@ public class ScientistObjectives : MonoBehaviour
         string objectiveOne = string.Format("Have {0} lights on at the same time", m_lightAmount);
         string objectiveTwo = string.Format("Have {0} cameras enabled at the same time", m_cameraAmount);
         string objectiveThree = string.Format("Switch the light in {0}, then switch the light in {1} within {2} seconds", m_lightLocations[m_firstLight], m_lightLocations[m_secondLight], m_seconds);
-        string objectiveFour = string.Format("Wait inside {0} for {1} seconds", m_lightLocations[m_roomWaitNo], m_roomWaitSeconds);
+        string objectiveFour = string.Format("Wait inside {0} for {1} seconds", m_roomName[m_roomWaitNo], m_roomWaitSeconds);
 
         objectiveText.text = "Current Objectives:";
         objectiveText.text += string.Format("\n{0}", objectiveOne);
