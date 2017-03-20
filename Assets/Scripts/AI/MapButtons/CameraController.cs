@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
 
     public Button[] cameraButtons;
     public TaskLog taskLogScript;
+
+    public ScientistObjectives scientistObjectiveScript;
 	// Use this for initialization
 	void Start () 
 	{
@@ -35,6 +37,7 @@ public class CameraController : MonoBehaviour
         {
             m_camerasOn[i] = true;
         }
+        CheckCameras();
 	}
     public void CurrentCameraPower(int newPower)
     {
@@ -69,11 +72,8 @@ public class CameraController : MonoBehaviour
                 cameraText[camNo].text = "Recording";
                 cameraRecImage[camNo].SetActive(true);
             }
-            else
-            {
-                //no power
-            }
         }
+        CheckCameras();
     }
 
     public void WaitAndShowCamerasA()
@@ -111,8 +111,6 @@ public class CameraController : MonoBehaviour
             cameraGameObjects[i].SetActive(false);
         }
     }
-
-
 
     void ShowCamerasB()
     {
@@ -160,5 +158,19 @@ public class CameraController : MonoBehaviour
                 cameraButtons[i].interactable = true;
             }
         }
+    }
+
+    void CheckCameras()
+    {
+        int camerasOnInt = 0;
+
+        for (int i = 0; i < m_camerasOn.Length; i++)
+        {
+            if (m_camerasOn[i])
+            {
+                camerasOnInt += 1;
+            }
+        }
+        scientistObjectiveScript.CheckCameras(camerasOnInt);
     }
 }

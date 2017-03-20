@@ -20,6 +20,22 @@ public class LightController : MonoBehaviour
         CheckLights();
 	}
 
+    private int m_lightOne;
+    private int m_lightTwo;
+    private float m_timeNeeded;
+    private float m_countingDown;
+    private bool m_isCountingDown;
+    private bool m_lightOneOn;
+    private bool m_lightTwoOn;
+
+    public void LightSwitchObjectiveOrder(int lightOne, int lightTwo, float timeNeeded)
+    {
+        m_lightOne = lightOne;
+        m_lightTwo = lightTwo;
+        m_timeNeeded = timeNeeded;
+        m_countingDown = m_timeNeeded;
+    }
+
     public void CurrentLightPower(int newPower)
     {
         m_lightPower += newPower;
@@ -28,7 +44,6 @@ public class LightController : MonoBehaviour
 
     public void LightSwitch(int lightNo)
     {
-       // print("light switched on");
         if(m_lightOn[lightNo] == true)
         {
             lights[lightNo].enabled = false;
@@ -47,6 +62,30 @@ public class LightController : MonoBehaviour
             }
         }
         CheckLights();
+        
+        if(lightNo == m_lightOne && !m_lightOneOn)
+        {
+            m_isCountingDown = true;
+            m_lightOneOn = true;
+        }
+
+        if (lightNo == m_lightTwo && m_lightOneOn && m_isCountingDown)
+        {
+            scientistObjectiveScript.CheckLightSequence();
+        }
+    }
+
+    void Update()
+    {
+        if(m_isCountingDown)
+        {
+            m_countingDown -= Time.deltaTime;
+            if(m_countingDown <= 0)
+            {
+                m_lightOneOn = false;
+                m_isCountingDown = false;
+            }
+        }
     }
 
     void CheckLights()
@@ -86,5 +125,4 @@ public class LightController : MonoBehaviour
             }
         }
     }
-
 }

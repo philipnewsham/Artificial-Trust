@@ -87,7 +87,6 @@ public class DoorToggleInstantiate : MonoBehaviour
 
     public void EnoughPowerLocked()
     {
-        //print("GOTTOMSOTTEM");
         for (int i = 0; i < m_doorsLength; i++)
         {
             if (m_doorLockedToggleArray[i].isOn == false && m_isCounting[i] == false)
@@ -113,14 +112,12 @@ public class DoorToggleInstantiate : MonoBehaviour
 
     public void EnoughPower()
     {
-        //print("wowee boys");
         for (int i = 0; i < m_doorsLength; i++)
         {
             if (m_doorPoweredToggleArray[i].isOn == false)
             {
                 if (!m_lockedOutAction[i])
                 {
-                    //print("Clicked");
                     m_doorPoweredToggleArray[i].interactable = true;
                 }
             }
@@ -151,7 +148,6 @@ public class DoorToggleInstantiate : MonoBehaviour
                     {
                         ReEnableDoorLock(i);
                     }
-                    //print("heyo");
                 }
             }
         }

@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 public class CheckRoom : MonoBehaviour
 {
-    private string[] m_roomName = new string[7] { "Main Laboratory", "Small Office", "Server Room", "AI HUB", "Archives", "Dr. Kirkoff's Office","Corridor" };
+    private string[] m_roomName = new string[9] { "Main Laboratory", "Small Office", "Server Room", "AI HUB", "Archives", "Dr. Kirkoff's Office","Corridor One", "Corridor Two", "Corridor Three" };
+    private float[] m_roomTime = new float[9];
     public Text roomNameText;
     public Text objectiveText;
     private int m_currentObjectiveInt;
@@ -34,15 +35,16 @@ public class CheckRoom : MonoBehaviour
     main:
 
     */
-    bool m_introObjectives;
+    bool m_introObjectives = true;
+    int m_roomNo = 1;
 	// Update is called once per frame
 	void OnTriggerEnter (Collider other)    
     {
 	    if(other.gameObject.tag == "Room")
         {
-            int roomNo = other.gameObject.GetComponent<CurrentRoom>().currentRoom;
-            roomNameText.text = m_roomName[roomNo];
-
+            m_roomNo = other.gameObject.GetComponent<CurrentRoom>().currentRoom;
+            roomNameText.text = m_roomName[m_roomNo];
+            /*
             if(m_currentObjectiveInt == 0 && roomNo == 0)
             {
                 UpdateObjectiveText();
@@ -57,17 +59,27 @@ public class CheckRoom : MonoBehaviour
             {
                 UpdateObjectiveText();
             }
+            */
 
-            if(m_currentObjectiveInt == (roomNo/2) && m_introObjectives)
+            if(m_currentObjectiveInt == (m_roomNo/2) && m_introObjectives)
             {
                 UpdateObjectiveText();
             }
         }
 	}
 
+    void Update()
+    {
+        m_roomTime[m_roomNo] += Time.deltaTime;
+    }
+
     public void UpdateObjectiveText()
     {
         m_currentObjectiveInt += 1;
         objectiveText.text = string.Format("Current Objective: {0}", m_objectives[m_currentObjectiveInt]);
+        if(m_currentObjectiveInt >= 6)
+        {
+            m_introObjectives = false;
+        }
     }
 }
