@@ -8,6 +8,7 @@ public class ScientistObjectives : MonoBehaviour
     bool m_subGoalOne;
     bool m_subGoalTwo;
     bool m_subGoalThree;
+    bool m_subGoalFour;
     string m_subGoalOneText;
 
     string[] m_lightLocations = new string[8] {"Archive Room","Dr. Kirkoff's Office","Small Office","Server Room","Main Laboratory","Corridor One","Corridor Two","Corridor Three"};
@@ -17,10 +18,12 @@ public class ScientistObjectives : MonoBehaviour
     float m_seconds;
 
     public LightController lightController;
+
     void Start ()
     {
         SubGoal();
         ChooseLightSequence();
+        RoomWait();
         ObjectiveText();
 	}	
 	
@@ -69,6 +72,22 @@ public class ScientistObjectives : MonoBehaviour
         CheckObjectives();
     }
 
+    int m_roomWaitNo;
+    float m_roomWaitSeconds;
+
+    void RoomWait()
+    {
+        m_roomWaitNo = Random.Range(0, 6);
+        m_roomWaitSeconds = Random.Range(40, 121);
+        GetComponent<CheckRoom>().WaitObjective(m_roomWaitNo, m_roomWaitSeconds);
+    }
+
+    public void CompletedWaitObjective()
+    {
+        m_subGoalFour = true;
+        CheckObjectives();
+    }
+
     public Text objectiveText;
 
     void ObjectiveText()
@@ -76,16 +95,18 @@ public class ScientistObjectives : MonoBehaviour
         string objectiveOne = string.Format("Have {0} lights on at the same time", m_lightAmount);
         string objectiveTwo = string.Format("Have {0} cameras enabled at the same time", m_cameraAmount);
         string objectiveThree = string.Format("Switch the light in {0}, then switch the light in {1} within {2} seconds", m_lightLocations[m_firstLight], m_lightLocations[m_secondLight], m_seconds);
+        string objectiveFour = string.Format("Wait inside {0} for {1} seconds", m_lightLocations[m_roomWaitNo], m_roomWaitSeconds);
 
         objectiveText.text = "Current Objectives:";
         objectiveText.text += string.Format("\n{0}", objectiveOne);
         objectiveText.text += string.Format("\n{0}", objectiveTwo);
         objectiveText.text += string.Format("\n{0}", objectiveThree);
+        objectiveText.text += string.Format("\n{0}", objectiveFour);
     }
 
     void CheckObjectives()
     {
-        if (m_subGoalOne && m_subGoalTwo && m_subGoalThree)
+        if (m_subGoalOne && m_subGoalTwo && m_subGoalThree && m_subGoalFour)
             print("all goals completed");
     }
 }

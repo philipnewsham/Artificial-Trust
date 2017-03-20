@@ -37,6 +37,7 @@ public class CheckRoom : MonoBehaviour
     */
     bool m_introObjectives = true;
     int m_roomNo = 1;
+    bool m_checkingWait;
 	// Update is called once per frame
 	void OnTriggerEnter (Collider other)    
     {
@@ -44,6 +45,12 @@ public class CheckRoom : MonoBehaviour
         {
             m_roomNo = other.gameObject.GetComponent<CurrentRoom>().currentRoom;
             roomNameText.text = m_roomName[m_roomNo];
+
+            if (m_roomNo == m_waitRoom)
+                m_checkingWait = true;
+            else
+                m_checkingWait = false;
+
             /*
             if(m_currentObjectiveInt == 0 && roomNo == 0)
             {
@@ -67,10 +74,22 @@ public class CheckRoom : MonoBehaviour
             }
         }
 	}
-
+    private int m_waitRoom;
+    private float m_waitTime;
+    public void WaitObjective(int roomNo, float time)
+    {
+        m_waitRoom = roomNo;
+        m_waitTime = time;
+    }
+    bool m_objectiveComplete;
     void Update()
     {
         m_roomTime[m_roomNo] += Time.deltaTime;
+        if(m_checkingWait && m_roomTime[m_roomNo] >= m_waitTime && !m_objectiveComplete)
+        {
+            m_objectiveComplete = true;
+            GetComponent<ScientistObjectives>().CompletedWaitObjective();
+        }
     }
 
     public void UpdateObjectiveText()
