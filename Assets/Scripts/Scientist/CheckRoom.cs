@@ -88,7 +88,7 @@ public class CheckRoom : MonoBehaviour
         if(m_checkingWait && m_roomTime[m_roomNo] >= m_waitTime && !m_objectiveComplete)
         {
             m_objectiveComplete = true;
-            GetComponent<ScientistObjectives>().CompletedWaitObjective();
+			GetComponent<AgentObjectives>().WaitInRoomObjective(0,true);
         }
     }
 

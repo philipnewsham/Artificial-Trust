@@ -40,7 +40,7 @@ public class LightController : MonoBehaviour
     {
         m_lightPower += newPower;
     }
-    public ScientistObjectives scientistObjectiveScript;
+    public AgentObjectives agentObjectiveScript;
 
     public void LightSwitch(int lightNo)
     {
@@ -71,7 +71,7 @@ public class LightController : MonoBehaviour
 
         if (lightNo == m_lightTwo && m_lightOneOn && m_isCountingDown)
         {
-            scientistObjectiveScript.CheckLightSequence();
+			agentObjectiveScript.LightSwitchSequenceObjective(0,true);
         }
     }
 
@@ -99,7 +99,7 @@ public class LightController : MonoBehaviour
                 lightsOnInt += 1;
             }
         }
-        scientistObjectiveScript.CheckLights(lightsOnInt);
+		agentObjectiveScript.LightsOnObjective(0,lightsOnInt,true);
     }
 
 	public Button[] lightButtons;

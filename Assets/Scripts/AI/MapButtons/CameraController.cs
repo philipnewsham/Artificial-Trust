@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
     public Button[] cameraButtons;
     public TaskLog taskLogScript;
 
-    public ScientistObjectives scientistObjectiveScript;
+    public AgentObjectives agentObjectiveScript;
 	// Use this for initialization
 	void Start () 
 	{
@@ -171,6 +171,6 @@ public class CameraController : MonoBehaviour
                 camerasOnInt += 1;
             }
         }
-        scientistObjectiveScript.CheckCameras(camerasOnInt);
+		agentObjectiveScript.CamerasOnObjective(0,camerasOnInt,true);
     }
 }
