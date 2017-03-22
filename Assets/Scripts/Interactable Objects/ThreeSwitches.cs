@@ -6,6 +6,8 @@ public class ThreeSwitches : MonoBehaviour {
     private bool m_switchTwo;
     private bool m_switchThree;
 
+    private int[] m_switchPostionInt = new int[3];
+
     public GameObject robotBody;
     private RobotBody m_robotBodyScript;
 
@@ -45,7 +47,8 @@ public class ThreeSwitches : MonoBehaviour {
     public DoorToggleInstantiate doorToggleInstantiateScript;
     public SwitchToggles switchToggleScript;
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         m_blackoutScript = blackoutCanvas.GetComponent<Blackout>();
         m_doorControllerScript = ai.GetComponent<DoorController>();
         m_lightControllerScript = ai.GetComponent<LightController>();
@@ -94,6 +97,14 @@ public class ThreeSwitches : MonoBehaviour {
             Switches();
         }
     }
+    private int[] m_goalSwitchPositions = new int[3];
+    public AgentObjectives agentObjectives;
+    public void AgentSwitchPositions(int posOne, int posTwo, int posThree)
+    {
+        m_goalSwitchPositions[0] = posOne;
+        m_goalSwitchPositions[1] = posTwo;
+        m_goalSwitchPositions[2] = posThree;
+    }
 
     public void SwitchOne()
     {
@@ -118,6 +129,19 @@ public class ThreeSwitches : MonoBehaviour {
 
     void Switches()
     {
+        if (m_switchPostionInt[0] == 0 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[0]; }
+        if (m_switchPostionInt[0] == 0 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[1]; }
+        if (m_switchPostionInt[0] == 0 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[2]; }
+        if (m_switchPostionInt[0] == 0 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[3]; }
+        if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[4]; }
+        if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[5]; }
+        if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[6]; }
+        if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[7]; }
+        if (m_switchPostionInt[0] == m_goalSwitchPositions[0] && m_switchPostionInt[1] == m_goalSwitchPositions[1] && m_switchPostionInt[2] == m_goalSwitchPositions[2]) { agentObjectives.SwitchPositions(0, true); }
+    }
+    /*
+    void Switches()
+    {
         if (m_switchOne)
         {
             SwitchOneOn();
@@ -127,7 +151,7 @@ public class ThreeSwitches : MonoBehaviour {
             SwitchOneOff();
         }
     }
-
+  
     void SwitchOneOn()
     {
         if (m_switchTwo)
@@ -135,13 +159,10 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[0];
-               // print("1,1,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[1];
-                //m_robotBodyScript.SwitchesSet();
-               // print("1,1,0");
             }
         }
         else
@@ -149,16 +170,13 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[2];
-               // print("1,0,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[3];
-                //print("1,0,0");
             }
         }
         print(m_currentNumber);
-        //Interact();
     }
 
     void SwitchOneOff()
@@ -168,12 +186,10 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[4];
-                //print("0,1,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[5];
-                //print("0,1,0");
             }
         }
         else
@@ -181,17 +197,15 @@ public class ThreeSwitches : MonoBehaviour {
             if (m_switchThree)
             {
                 m_currentNumber = m_actionNumber[6];
-                //print("0,0,1");
             }
             else
             {
                 m_currentNumber = m_actionNumber[7];
-               //print("0,0,0");
             }
         }
         print(m_currentNumber);
-        //Interact();
     }
+    */
 
     public void Interact()
     {

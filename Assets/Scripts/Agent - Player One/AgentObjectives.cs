@@ -8,9 +8,9 @@ public class AgentObjectives : MonoBehaviour
     private int[] m_subGoals = new int[3];
     private bool[] m_goalComplete = new bool[3];
 	private string[] m_goalTexts = new string[3];
-    private List<int> m_goalTypes = new List<int>() { 0, 1, 2, 3};
+    private List<int> m_goalTypes = new List<int>() { 0, 1, 2, 3, 4};
     private int m_randomNo;
-    private int m_goalAmount = 4;
+    private int m_goalAmount;
 
     void Start()
     {
@@ -41,6 +41,9 @@ public class AgentObjectives : MonoBehaviour
                     break;
                 case 3:
 				WaitInRoomObjective(i, false);
+                    break;
+                case 4:
+                    SwitchPositions(i, false);
                     break;
                 default:
                     print("Error");
@@ -144,6 +147,29 @@ public class AgentObjectives : MonoBehaviour
 			m_goalComplete[lightSequenceGoalNo] = true;
 			CheckObjectives();
 		}
+    }
+
+    //set switch positions
+    int[] m_switchPositions = new int[3];
+    public ThreeSwitches switchesScript;
+    private int m_switchGoalNo;
+    public void SwitchPositions(int goalNo, bool isComplete)
+    {
+        if(!isComplete)
+        {
+            m_switchGoalNo = goalNo;
+            for (int i = 0; i < 3; i++)
+            {
+                m_switchPositions[i] = Random.Range(0, 2);
+            }
+            m_goalTexts[goalNo] = string.Format("Put the switches in the server room to {0}, {1}, {2}", m_switchPositions[0], m_switchPositions[1], m_switchPositions[2]);
+            switchesScript.AgentSwitchPositions(m_switchPositions[0], m_switchPositions[1], m_switchPositions[2]);
+        }
+        else
+        {
+            m_goalComplete[m_switchGoalNo] = true;
+            CheckObjectives();
+        }
     }
 	/*
 	void ObjectiveText()

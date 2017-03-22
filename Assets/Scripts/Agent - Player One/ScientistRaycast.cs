@@ -71,8 +71,8 @@ public class ScientistRaycast : MonoBehaviour {
 					m_count = 0;
 					interactText.text = "Interact!";
 					aButton.SetActive (true);
-					if (Input.GetButtonDown ("ControllerA") || Input.GetKeyDown (KeyCode.E)) {
-						print ("clicked on interactable object");
+					if (Input.GetButtonDown ("ControllerA") || Input.GetKeyDown (KeyCode.E))
+                    {
 						gameController.InteractedWith (m_hit.collider.gameObject.GetComponent<InteractableObject> ().interactableID);
 					}
 				}
