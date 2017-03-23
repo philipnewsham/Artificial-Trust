@@ -104,11 +104,15 @@ public class ThreeSwitches : MonoBehaviour {
         m_goalSwitchPositions[0] = posOne;
         m_goalSwitchPositions[1] = posTwo;
         m_goalSwitchPositions[2] = posThree;
+		print(string.Format("{0} {1} {2}",posOne,posTwo,posThree));
     }
 
     public void SwitchOne()
     {
         m_switchOne = !m_switchOne;
+
+		m_switchPostionInt [0] = (m_switchPostionInt [0] + 1) % 2;
+
         Switches();
         switchToggleScript.SwitchFlipped(0, m_switchOne);
     }
@@ -116,6 +120,7 @@ public class ThreeSwitches : MonoBehaviour {
     public void SwitchTwo()
     {
         m_switchTwo = !m_switchTwo;
+		m_switchPostionInt [1] = (m_switchPostionInt [1] + 1) % 2;
         Switches();
         switchToggleScript.SwitchFlipped(1, m_switchTwo);
     }
@@ -123,6 +128,7 @@ public class ThreeSwitches : MonoBehaviour {
     public void SwitchThree()
     {
         m_switchThree = !m_switchThree;
+		m_switchPostionInt [2] = (m_switchPostionInt [2] + 1) % 2;
         Switches();
         switchToggleScript.SwitchFlipped(2, m_switchThree);
     }
@@ -137,8 +143,7 @@ public class ThreeSwitches : MonoBehaviour {
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[5]; }
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[6]; }
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[7]; }
-        if (m_switchPostionInt[0] == m_goalSwitchPositions[0] && m_switchPostionInt[1] == m_goalSwitchPositions[1] && m_switchPostionInt[2] == m_goalSwitchPositions[2]) { agentObjectives.SwitchPositions(0, true); }
-    }
+        }
     /*
     void Switches()
     {
@@ -263,8 +268,9 @@ public class ThreeSwitches : MonoBehaviour {
             {
                 m_cameraController.CurrentCameraPower(m_powerIncreased[m_randPower]);
             }
-
         }
+
+		if (m_switchPostionInt[0] == m_goalSwitchPositions[0] && m_switchPostionInt[1] == m_goalSwitchPositions[1] && m_switchPostionInt[2] == m_goalSwitchPositions[2]) { agentObjectives.SwitchPositions(0, true); }
     }
 
     void PowerExchange()

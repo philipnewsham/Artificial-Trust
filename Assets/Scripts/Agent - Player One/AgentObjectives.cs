@@ -60,44 +60,54 @@ public class AgentObjectives : MonoBehaviour
     //how many lights should be on
     int m_lightAmount;
     int m_lightOnGoalNo;
+	bool m_isLightObjectective;
     public void LightsOnObjective(int goalNo, int lightsOn, bool isComplete)
     {
         if(!isComplete)
         {
             m_lightOnGoalNo = goalNo;
+			m_isLightObjectective = true;
             m_lightAmount = Random.Range(0, 8);
 			m_goalTexts[goalNo] = string.Format("Have {0} lights on at the same time", m_lightAmount);
         }
         else
         {
-            if (lightsOn == m_lightAmount)
-                m_goalComplete[m_lightOnGoalNo] = true;
-            else
-				m_goalComplete[m_lightOnGoalNo] = false;
+			if (m_isLightObjectective) 
+			{
+				if (lightsOn == m_lightAmount)
+					m_goalComplete [m_lightOnGoalNo] = true;
+				else
+					m_goalComplete [m_lightOnGoalNo] = false;
 
-            CheckObjectives();
+				CheckObjectives ();
+			}
         }
     }
 
     //how many cameras should be on
     int m_cameraAmount;
     int cameraOnGoalNo;
+	bool m_isCameraObjective;
     public void CamerasOnObjective(int goalNo, int camerasOn, bool isComplete)
     {
         if (!isComplete)
         {
 			cameraOnGoalNo = goalNo;
+			m_isCameraObjective = true;
             m_cameraAmount = Random.Range(0, 8);
 			m_goalTexts[goalNo] = string.Format("Have {0} cameras enabled at the same time", m_cameraAmount);
         }
         else
         {
-            if (camerasOn == m_cameraAmount)
-				m_goalComplete[cameraOnGoalNo] = true;
-            else
-				m_goalComplete[cameraOnGoalNo] = false;
+			if (m_isCameraObjective) 
+			{
+				if (camerasOn == m_cameraAmount)
+					m_goalComplete [cameraOnGoalNo] = true;
+				else
+					m_goalComplete [cameraOnGoalNo] = false;
 
-            CheckObjectives();
+				CheckObjectives ();
+			}
         }
     }
     //switch two lights in order within the time
@@ -144,7 +154,7 @@ public class AgentObjectives : MonoBehaviour
 		}
 		else 
 		{
-			m_goalComplete[lightSequenceGoalNo] = true;
+			m_goalComplete[m_waitRoomGoalNo] = true;
 			CheckObjectives();
 		}
     }
