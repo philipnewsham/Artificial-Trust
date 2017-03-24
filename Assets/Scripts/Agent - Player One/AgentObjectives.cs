@@ -8,7 +8,7 @@ public class AgentObjectives : MonoBehaviour
     private int[] m_subGoals = new int[3];
     private bool[] m_goalComplete = new bool[3];
 	private string[] m_goalTexts = new string[3];
-    private List<int> m_goalTypes = new List<int>() { 0, 1, 2, 3, 4};
+    private List<int> m_goalTypes = new List<int>() { 0, 1, 2, 3, 4, 5};
     private int m_randomNo;
     private int m_goalAmount;
 
@@ -44,6 +44,9 @@ public class AgentObjectives : MonoBehaviour
                     break;
                 case 4:
                     SwitchPositions(i, false);
+                    break;
+                case 5:
+                    UnlockComputer(i, false);
                     break;
                 default:
                     print("Error");
@@ -110,6 +113,7 @@ public class AgentObjectives : MonoBehaviour
 			}
         }
     }
+
     //switch two lights in order within the time
     int m_firstLight;
     int m_secondLight;
@@ -181,6 +185,28 @@ public class AgentObjectives : MonoBehaviour
             CheckObjectives();
         }
     }
+
+    //unlock computer in small office
+    private int m_computerGoalNo;
+    bool m_isComputerGoal;
+    public void UnlockComputer(int goalNo, bool isComplete)
+    {
+        if(!isComplete)
+        {
+            m_computerGoalNo = goalNo;
+            m_isComputerGoal = true;
+            m_goalTexts[goalNo] = string.Format("Unlock the computer in the small office");
+        }
+        else
+        {
+            if(m_isComputerGoal)
+            {
+                m_goalComplete[m_computerGoalNo] = true;
+                CheckObjectives();
+            }
+        }
+    }
+
 	/*
 	void ObjectiveText()
 	{

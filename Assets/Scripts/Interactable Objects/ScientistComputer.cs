@@ -143,7 +143,6 @@ public class ScientistComputer : MonoBehaviour {
             if ((Input.GetAxisRaw("DpadY") == 0) && (Input.GetAxisRaw("DpadX") == 0) && (m_dPadPressed))
             {
                 m_dPadPressed = false;
-                print("release");
             }
         }
 
@@ -389,7 +388,7 @@ public class ScientistComputer : MonoBehaviour {
         passwordPanel.SetActive(false);
         informationPanel.SetActive(false);
     }
-
+    public AgentObjectives agentObjectives;
     void CheckPassword()
     {
         string currentPassword = string.Format("{0}{1}{2}", m_firstLetter, m_secondLetter, m_thirdLetter);
@@ -397,6 +396,7 @@ public class ScientistComputer : MonoBehaviour {
         {
             print("Password Accepted");
             m_correctPassword = true;
+            agentObjectives.UnlockComputer(0, true);
             SwapToInformationPanel();
             m_audioSource.clip = audioClips[1];
         }
