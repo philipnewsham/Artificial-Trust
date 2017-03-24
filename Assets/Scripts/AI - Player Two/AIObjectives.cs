@@ -29,6 +29,8 @@ public class AIObjectives : MonoBehaviour
             switch (m_subGoals[i])
             {
                 case 0:
+				//do thing
+				break;
 
             }
         }
@@ -56,11 +58,11 @@ public class AIObjectives : MonoBehaviour
                 else
                     m_goalComplete[m_lightOnGoalNo] = false;
 
-                CheckObjectives();
+               //CheckObjectives();
             }
         }
     }
-
+	/*
     void CheckObjectives()
     {
         int goalsDone = 0;
@@ -75,4 +77,5 @@ public class AIObjectives : MonoBehaviour
         if (goalsDone == m_goalAmount)
             print("Sub Objectives Completed!");
     }
+    */
 }
