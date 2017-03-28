@@ -122,7 +122,7 @@ public class BinaryDecipher : MonoBehaviour
 				} 
 				else 
 				{
-					print ("wrong letter!");
+					//print ("wrong letter!");
                     m_correctLetter = false;
 					//KeyWrong ();
 				}

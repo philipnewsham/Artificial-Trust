@@ -10,6 +10,7 @@ public class LightController : MonoBehaviour
     public TaskLog taskLogScript;
 	void Start ()
     {
+        m_aiObjectiveScript = GetComponent<AIObjectives>();
         m_aiPowerScript = gameObject.GetComponent<AIPower>();
         m_lightPower = m_aiPowerScript.lightPower;
         m_lightOn = new bool[lights.Length];
@@ -41,6 +42,7 @@ public class LightController : MonoBehaviour
         m_lightPower += newPower;
     }
     public AgentObjectives agentObjectiveScript;
+    private AIObjectives m_aiObjectiveScript;
 
     public void LightSwitch(int lightNo)
     {
@@ -100,6 +102,8 @@ public class LightController : MonoBehaviour
             }
         }
 		agentObjectiveScript.LightsOnObjective(0,lightsOnInt,true);
+        m_aiObjectiveScript.LightsOnObjective(0, lightsOnInt, true);
+        m_aiObjectiveScript.SpecificLightsOnObjective(0, m_lightOn, true);
     }
 
 	public Button[] lightButtons;

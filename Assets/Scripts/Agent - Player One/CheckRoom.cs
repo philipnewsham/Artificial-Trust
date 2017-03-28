@@ -38,6 +38,7 @@ public class CheckRoom : MonoBehaviour
     bool m_introObjectives = true;
     int m_roomNo = 1;
     bool m_checkingWait;
+    bool m_checkingWaitAI;
 	// Update is called once per frame
 	void OnTriggerEnter (Collider other)    
     {
@@ -50,6 +51,12 @@ public class CheckRoom : MonoBehaviour
                 m_checkingWait = true;
             else
                 m_checkingWait = false;
+
+            if (m_roomNo == m_waitRoomAI)
+                m_checkingWaitAI = true;
+            else
+                m_checkingWaitAI = false;
+
 
             /*
             if(m_currentObjectiveInt == 0 && roomNo == 0)
@@ -68,12 +75,13 @@ public class CheckRoom : MonoBehaviour
             }
             */
 
-            if(m_currentObjectiveInt == (m_roomNo/2) && m_introObjectives)
+            if (m_currentObjectiveInt == (m_roomNo / 2) && m_introObjectives)
             {
                 UpdateObjectiveText();
             }
         }
 	}
+
     private int m_waitRoom;
     private float m_waitTime;
     public void WaitObjective(int roomNo, float time)
@@ -81,7 +89,18 @@ public class CheckRoom : MonoBehaviour
         m_waitRoom = roomNo;
         m_waitTime = time;
     }
+
+    private int m_waitRoomAI;
+    private float m_waitTimeAI;
+    public void WaitObjectiveAI(int roomNo, float time)
+    {
+        m_waitRoomAI = roomNo;
+        m_waitTimeAI = time;
+    }
+
     bool m_objectiveComplete;
+    bool m_objectiveCompleteAI;
+    public AIObjectives aiObjectiveScript;
     void Update()
     {
         m_roomTime[m_roomNo] += Time.deltaTime;
@@ -89,6 +108,12 @@ public class CheckRoom : MonoBehaviour
         {
             m_objectiveComplete = true;
 			GetComponent<AgentObjectives>().WaitInRoomObjective(0,true);
+        }
+
+        if(m_checkingWaitAI && m_roomTime[m_roomNo] >= m_waitTimeAI && !m_objectiveCompleteAI)
+        {
+            m_objectiveCompleteAI = true;
+            aiObjectiveScript.WaitInRoomObjective(0, true);
         }
     }
 

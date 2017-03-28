@@ -20,10 +20,12 @@ public class CameraController : MonoBehaviour
     public TaskLog taskLogScript;
 
     public AgentObjectives agentObjectiveScript;
+    private AIObjectives m_aiObjectiveScript;
 	// Use this for initialization
 	void Start () 
 	{
         m_aiPowerScript = gameObject.GetComponent<AIPower>();
+        m_aiObjectiveScript = GetComponent<AIObjectives>();
         m_cameraPower = m_aiPowerScript.cameraPower;
         m_cameraLightLength = cameras.Length;
         m_camerasOn = new bool[m_cameraLightLength];
@@ -172,5 +174,37 @@ public class CameraController : MonoBehaviour
             }
         }
 		agentObjectiveScript.CamerasOnObjective(0,camerasOnInt,true);
+        m_aiObjectiveScript.CamerasOnObjective(0, camerasOnInt, true);
+
+        if(camerasOnInt == 0)
+        {
+            m_blindTime = true;
+        }
+        else
+        {
+            m_blindTime = false;
+        }
+    }
+    float m_blindTimeTarget;
+    bool m_blindObjective;
+    public void BlindObjective(float time)
+    {
+        m_blindTimeTarget = time;
+        m_blindObjective = true;
+    }
+
+    bool m_blindTime;
+    float m_blindTimeCount;
+    void Update()
+    {
+        if(m_blindTime)
+        {
+            m_blindTimeCount += Time.deltaTime;
+            if(m_blindTimeCount >= m_blindTimeTarget && m_blindObjective)
+            {
+                m_aiObjectiveScript.BlindObjective(0, true);
+            }
+        }
+            
     }
 }

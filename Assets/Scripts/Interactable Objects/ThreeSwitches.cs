@@ -104,7 +104,7 @@ public class ThreeSwitches : MonoBehaviour {
         m_goalSwitchPositions[0] = posOne;
         m_goalSwitchPositions[1] = posTwo;
         m_goalSwitchPositions[2] = posThree;
-		print(string.Format("{0} {1} {2}",posOne,posTwo,posThree));
+		//print(string.Format("{0} {1} {2}",posOne,posTwo,posThree));
     }
 
     public void SwitchOne()
