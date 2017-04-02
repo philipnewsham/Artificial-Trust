@@ -30,6 +30,7 @@ public class PasswordGenerator : MonoBehaviour {
 
     public RobotBodyPasswordButton robotBodyPasswordButtonScript;
 
+    public DocumentButton[] documentButtons;
     void Start () {
         m_receivePasswordsKeys = receivePasswordsKeys;
         m_receivePasswordsLocks = receivePasswordsLocks;
@@ -66,7 +67,7 @@ public class PasswordGenerator : MonoBehaviour {
         for (int i = 0; i < 3; i++)
         {
             m_receivePasswordsLocks[i].password = m_allPasswords[i];
-            int randomKey = Random.Range(0, (3 - i));
+            int randomKey = Random.Range(0, m_lockNumbers.Count);
             if (i == 0)
             {
                 robotBodyPasswordButtonScript.ReceivePassword(m_allPasswords[0]);
@@ -78,7 +79,7 @@ public class PasswordGenerator : MonoBehaviour {
             }
             m_receivePasswordsKeys[(m_lockNumbers[randomKey])].password = m_allPasswords[i];
             string message = string.Format("////CONFIDENTIAL////\n---For Authorised Personnel Only---\n{0} has the password for {1}", m_keyObjectNames[(m_lockNumbers[randomKey])], m_lockObjectNames[i]);
-
+            //documentButtons[i].documentText = message;
             m_hackingDocumentScript.RecieveDocumentMessages(message, i);
             m_lockNumbers.Remove(m_lockNumbers[randomKey]);
         }

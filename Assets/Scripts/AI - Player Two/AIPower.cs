@@ -74,6 +74,11 @@ public class AIPower : MonoBehaviour
 		powerBar.fillAmount = totalPow / m_maxpower;
 	}
 
+    public int CurrentPower()
+    {
+        return m_totalPower;
+    }
+
     void CheckButton()
     {
         if(m_totalPower >= m_aiSwitchButtonPower)
