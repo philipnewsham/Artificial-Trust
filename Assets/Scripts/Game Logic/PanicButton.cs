@@ -109,8 +109,8 @@ public class PanicButton : MonoBehaviour {
         }
         else if (actionNo == 1)
         {
-            m_timerScript.ChangeTime(5);
-            m_timerScript.countingDown = true;
+           // m_timerScript.ChangeTime(5);
+           // m_timerScript.countingDown = true;
         }
         else if (actionNo == 2)
         {

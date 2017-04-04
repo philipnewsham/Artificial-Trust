@@ -207,4 +207,37 @@ public class CameraController : MonoBehaviour
         }
             
     }
+
+    public int currentCameraNo;
+    public void ChangeSingleCameraForward()
+    {
+        currentCameraNo = (currentCameraNo + 1) % cameras.Length;
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            if(i == currentCameraNo)
+            {
+                cameraGameObjects[i].SetActive(true);
+            }
+            else
+            {
+                cameraGameObjects[i].SetActive(false);
+            }
+        }
+    }
+
+    public void ChangeSingleCameraBackward()
+    {
+        currentCameraNo = (currentCameraNo + 7) % cameras.Length;
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            if (i == currentCameraNo)
+            {
+                cameraGameObjects[i].SetActive(true);
+            }
+            else
+            {
+                cameraGameObjects[i].SetActive(false);
+            }
+        }
+    }
 }

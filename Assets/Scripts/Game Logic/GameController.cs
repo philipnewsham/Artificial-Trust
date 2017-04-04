@@ -26,13 +26,16 @@ public class GameController : MonoBehaviour
     public ScientistRaycast scientistRaycast;
 	public GeometricView geometricView;
 
+    public SwitchOffAI switchOffAI;
+
     void Start()
     {
         m_panicButtonAS = panicButton.GetComponent<AudioSource>();
         m_panicButtonRenderer = panicButton.GetComponent<Renderer>();
     }
 
-    //0 - safe/1,2,3 - Filing Cabinets/4,5,6 - Switches/7 - SwitchesButton/8 - Switches info/9 - PanicButton(Scientist)/10...19 - Doors/20...29 - Lights/30...39 - Cameras/40 - Scientist Computer/41 - Check Map/42...44 Check Art
+    //0 - safe/1,2,3 - Filing Cabinets/4,5,6 - Switches/7 - SwitchesButton/8 - Switches info/9 - PanicButton(Scientist)/10...19 - Doors/20...29 - Lights/30...39 - Cameras
+    //40 - Scientist Computer/41 - Check Map/42...44 Check Art/45...47 AI Switches
     public void InteractedWith(int objectID)
     {
         if(objectID == 0)
@@ -94,10 +97,14 @@ public class GameController : MonoBehaviour
         {
             scientistRaycast.CheckMap();
         }
-		if (objectID >= 42 || objectID <= 44) 
+		if (objectID >= 42 && objectID <= 44) 
 		{
 			geometricView.SelectedObject (objectID - 42);
 		}
+        if(objectID >= 45 && objectID <= 47)
+        {
+            switchOffAI.Interacted(objectID - 45);
+        }
     }
 
     public void AIInteractedWith(int number)

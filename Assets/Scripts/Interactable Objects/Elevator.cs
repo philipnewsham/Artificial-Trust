@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 public class Elevator : MonoBehaviour
 {
+    /*
     public bool firstElevator;
     //public GameObject otherElevator;
     public Elevator otherElevatorScript;
@@ -254,4 +255,5 @@ public class Elevator : MonoBehaviour
         robotBodyController.UpdateCursorLock();
         SceneManager.LoadScene(0);
     }
+    */
 }

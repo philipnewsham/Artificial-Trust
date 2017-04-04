@@ -1,8 +1,68 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
+    private float m_maxTime = 545f;
+    private float m_count = 0f;
+    private float m_multiplier = 1f;
+    private bool m_isCountingDown;
+    public AIWin aiWinScript;
+    public AgentWin agentWinScript;
+    public UpdatedElevator elevatorScript;
+
+    public Text[] timerTextboxes;
+    public void BeginCountdown()
+    {
+        m_isCountingDown = true;
+    }
+
+    void Update()
+    {
+        if(m_isCountingDown)
+        {
+            m_count += Time.deltaTime * m_multiplier;
+            for (int i = 0; i < timerTextboxes.Length; i++)
+            {
+                timerTextboxes[i].text = string.Format("{0}:{1}", Mathf.Floor((m_maxTime - m_count)/60f), Mathf.Floor((m_maxTime - m_count) % 60f)/*, Mathf.Floor((m_maxTime - m_count) % 10f)*/);
+            }
+            
+            if(m_count >= m_maxTime)
+            {
+                m_isCountingDown = false;
+            }
+        }
+    }
+    public GameObject aiLoses;
+    public GameObject aiWins;
+    public GameObject agentWins;
+    public GameObject agentLoses;
+    void GameOver()
+    {
+        if (!elevatorScript.agentEscaped)
+        {
+            if(aiWinScript.mainObjective == 1)
+            {
+                aiWins.SetActive(true);
+            }
+            agentWins.SetActive(false);
+        }
+        else
+        {
+            agentWins.SetActive(true);
+        }
+
+        if(!elevatorScript.aiEscaped && aiWinScript.mainObjective == 0)
+        {
+            aiLoses.SetActive(true);
+        }
+        else if (elevatorScript.aiEscaped && aiWinScript.mainObjective == 0)
+        {
+            aiWins.SetActive(true);
+        }
+    }
+    /*
     public int[] possibleTimes;
     private int[] m_possibleTimes { get { return possibleTimes; } }
     private float m_currentTime;
@@ -55,4 +115,5 @@ public class Timer : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    */
 }

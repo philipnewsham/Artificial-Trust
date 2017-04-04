@@ -23,6 +23,7 @@ public class AgentObjectives : MonoBehaviour
         }
 		ChoosingGoals ();
     }
+
 	public Text objectiveText;
     void ChoosingGoals()
     {
@@ -142,6 +143,7 @@ public class AgentObjectives : MonoBehaviour
         }
 
     }
+
     //wait inside a room for a certain amount of time
 	int m_roomWaitNo;
 	float m_roomWaitSeconds;
@@ -207,7 +209,7 @@ public class AgentObjectives : MonoBehaviour
         }
     }
 
-	/*
+    /*
 	void ObjectiveText()
 	{
 		string objectiveOne = string.Format("Have {0} lights on at the same time", m_lightAmount);
@@ -222,9 +224,13 @@ public class AgentObjectives : MonoBehaviour
 		objectiveText.text += string.Format("\n{0}", objectiveFour);
 	}
 	*/
+
+    public SwitchOffAI switchOffAIScript;
+
     void CheckObjectives()
     {
         int goalsDone = 0;
+        switchOffAIScript.UpdateSubObjectives(m_goalComplete);
         for (int i = 0; i < m_goalAmount; i++)
         {
             if (m_goalComplete[i])

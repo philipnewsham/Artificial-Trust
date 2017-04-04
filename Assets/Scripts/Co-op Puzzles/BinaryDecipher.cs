@@ -66,6 +66,7 @@ public class BinaryDecipher : MonoBehaviour
 	};
 
     public Button[] buttons;
+    public Button[] backupButtons;
 	public GameObject[] letterCubes;
 	private int m_currentLetter;
 	public Material[] letterCubeMaterials;
@@ -142,22 +143,22 @@ public class BinaryDecipher : MonoBehaviour
         }
         showLetterText.text = "";
     }
-    int m_lettersCorrect = 25;
+    int m_lettersCorrect = 0;
 	void KeyCorrect()
 	{
-        
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            if(buttons[i].GetComponentInChildren<Text>().text == m_binaryAlphabet[m_currentLetter])
-            {
-                buttons[i].GetComponentInChildren<Text>().text = m_alphabet[m_currentLetter];
-                buttons[i].interactable = false;
-            }
-        }
         m_lettersCorrect += 1;
-        if(m_lettersCorrect == 27)
+        if (m_lettersCorrect == 4)
         {
             UnlockNextPuzzle();
+        }
+
+        for (int i = 0; i < backupButtons.Length; i++)
+        {
+            if(backupButtons[i].GetComponentInChildren<Text>().text == m_binaryAlphabet[m_currentLetter])
+            {
+                backupButtons[i].GetComponentInChildren<Text>().text = m_alphabet[m_currentLetter];
+                backupButtons[i].interactable = false;
+            }
         }
 	}
     public DoorController doorController;
