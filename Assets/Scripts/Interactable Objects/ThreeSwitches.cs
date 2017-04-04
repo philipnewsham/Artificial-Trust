@@ -86,10 +86,15 @@ public class ThreeSwitches : MonoBehaviour {
                 m_currentNumber = m_actionNumber[i];
                 //print(m_currentNumber);
             }
+            if(m_actionNumber[i] == 3)
+            {
+                robotBodySwitches.text = string.Format("{0}", m_switchPositions[i]);
+            }
         }
         ScientistSwitchInfo();
         AISwitchInfo();
     }
+    public Text robotBodySwitches;
 	void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha5))
@@ -132,7 +137,7 @@ public class ThreeSwitches : MonoBehaviour {
         Switches();
         switchToggleScript.SwitchFlipped(2, m_switchThree);
     }
-
+    public Text currentSwitchesText;
     void Switches()
     {
         if (m_switchPostionInt[0] == 0 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[0]; }
@@ -143,6 +148,7 @@ public class ThreeSwitches : MonoBehaviour {
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[5]; }
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[6]; }
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[7]; }
+        currentSwitchesText.text = string.Format("{0},{1},{2}", m_switchPostionInt[0], m_switchPostionInt[1], m_switchPostionInt[2]);
         }
     /*
     void Switches()
@@ -282,12 +288,13 @@ public class ThreeSwitches : MonoBehaviour {
     {
         scientistSwitchInfo.text = string.Format("Switches: \n{0} \n{1} \n{2} \n{3}", m_actionMessages[0], m_actionMessages[1], m_actionMessages[2], m_actionMessages[3]);
     }
-
+    public Button[] documentButtons;
     void AISwitchInfo()
     {
-        for (int i = 5; i < 9; i++)
+        for (int i = 6; i < 9; i++)
         {
             m_hackingDocumentScript.RecieveDocumentMessages(m_actionMessages[i - 1], i);
+            documentButtons[i - 6].GetComponent<DocumentButton>().documentText = m_actionMessages[i - 1];
         }
     }
 }

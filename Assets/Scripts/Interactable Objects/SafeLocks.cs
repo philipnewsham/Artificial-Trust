@@ -63,7 +63,7 @@ public class SafeLocks : MonoBehaviour
     private bool m_justPressed;
 
     public ScientistComputer scientistComputerScript;
-
+    public Button[] documentButtons;
     void Start ()
     {
         //print("Start");
@@ -79,7 +79,9 @@ public class SafeLocks : MonoBehaviour
         m_correctStarSign = Random.Range(0, 12);
         starsignImage.sprite = starsigns[m_currentStarsign];
         string starsignMessage = string.Format("////CONFIDENTIAL////\n---For Authorised Personnel Only---\nThe star sign that unlocks the safe is {0}", starsignNames[m_correctStarSign]);
+        documentButtons[0].GetComponent<DocumentButton>().documentText = string.Format("The star sign that unlocks the safe is {0}", starsignNames[m_correctStarSign]);
         scientistComputerScript.ReceiveStarsign(starsignMessage);
+
         m_hackingDocuments.RecieveDocumentMessages(starsignMessage, 4);
         safeCanvas.SetActive(false);
 
@@ -128,7 +130,7 @@ public class SafeLocks : MonoBehaviour
             if ((Input.GetAxisRaw("DpadY") == 0) && (Input.GetAxisRaw("DpadX") == 0) && (m_dPadPressed))
             {
                 m_dPadPressed = false;
-                print("release");
+                //print("release");
             }
 
             if (Input.GetButtonDown("ControllerA"))

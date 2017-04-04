@@ -34,6 +34,8 @@ public class DocumentButton : MonoBehaviour
 
         m_currentPower = aiPower.CurrentPower();
         hoverTextbox.text = hoverText;
+        if (m_isCompleted)
+            informationTextbox.text = documentText;
     }
 
     public void HoverText(bool isHover)

@@ -212,6 +212,7 @@ public class Safe : MonoBehaviour {
         //print(string.Format("{0},{1},{2},{3}", m_rankOrder[0], m_rankOrder[1], m_rankOrder[2], m_rankOrder[3]));
         string message = string.Format("////CONFIDENTIAL////\n---For Authorised Personnel Only---\n The order of the buttons are: \n{0},{1},{2},{3}", shapeNames[m_rankOrder[0]-1], shapeNames[m_rankOrder[1]-1], shapeNames[m_rankOrder[2]-1], shapeNames[m_rankOrder[3]-1]);//all goes wrong, remove shapenames part
         m_hackingDocumentScript.RecieveDocumentMessages(message, 3);
+        documentButton.GetComponent<DocumentButton>().documentText = string.Format("The order of the shapes are: \n{0}, {1}, {2}, {3}", shapeNames[m_rankOrder[0] - 1], shapeNames[m_rankOrder[1] - 1], shapeNames[m_rankOrder[2] - 1], shapeNames[m_rankOrder[3] - 1]);
         scientistComputerScript.ReceiveSequence(message);
         for (int i = 0; i < 4; i++)
         {
@@ -219,7 +220,7 @@ public class Safe : MonoBehaviour {
         }
 
     }
-
+    public Button documentButton;
     public void ButtonSequence(int currentButton)
     {
         if(m_pressOrder == m_rankOrder[currentButton])

@@ -126,8 +126,8 @@ public class DoorToggleInstantiate : MonoBehaviour
 
     public void DisabledLock(int doorID)
     {
-        m_doorLockedToggleArray[doorID].isOn = false;
-        m_doorLockedToggleArray[doorID].interactable = false;
+        //m_doorLockedToggleArray[doorID].isOn = false;
+       // m_doorLockedToggleArray[doorID].interactable = false;
         m_isCounting[doorID] = true;
         m_doorControllerScript.Locking(doorID);
         m_lockedOutAction[doorID] = false;

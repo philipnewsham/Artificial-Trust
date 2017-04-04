@@ -79,7 +79,7 @@ public class PasswordGenerator : MonoBehaviour {
             }
             m_receivePasswordsKeys[(m_lockNumbers[randomKey])].password = m_allPasswords[i];
             string message = string.Format("////CONFIDENTIAL////\n---For Authorised Personnel Only---\n{0} has the password for {1}", m_keyObjectNames[(m_lockNumbers[randomKey])], m_lockObjectNames[i]);
-            //documentButtons[i].documentText = message;
+            documentButtons[i].documentText = message;
             m_hackingDocumentScript.RecieveDocumentMessages(message, i);
             m_lockNumbers.Remove(m_lockNumbers[randomKey]);
         }

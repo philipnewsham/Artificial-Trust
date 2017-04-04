@@ -25,6 +25,8 @@ public class AgentObjectives : MonoBehaviour
     }
 
 	public Text objectiveText;
+    public Text[] objectiveTexts;
+    private string[] objectiveStrings = new string[3];
     void ChoosingGoals()
     {
         for (int i = 0; i < m_goalAmount; i++)
@@ -57,8 +59,9 @@ public class AgentObjectives : MonoBehaviour
 		objectiveText.text = "Current Objectives:";
 		for (int i = 0; i < m_subGoals.Length; i++) 
 		{
-			objectiveText.text += string.Format("\n{0}", m_goalTexts[i]);
-		}
+            objectiveStrings[i] = string.Format("{0}", m_goalTexts[i]);
+            objectiveTexts[i].text = objectiveStrings[i];
+        }
     }
 
     //how many lights should be on
@@ -234,9 +237,14 @@ public class AgentObjectives : MonoBehaviour
         for (int i = 0; i < m_goalAmount; i++)
         {
             if (m_goalComplete[i])
+            {
                 goalsDone += 1;
+                objectiveTexts[i].text = string.Format("{0} Done!", objectiveStrings[i]);
+            }
             else
-                break;
+            {
+                objectiveTexts[i].text = string.Format("{0}", objectiveStrings[i]);
+            }
         }
 
         if (goalsDone == m_goalAmount)
