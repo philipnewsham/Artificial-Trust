@@ -9,6 +9,7 @@ public class LightButton : MonoBehaviour
     private bool m_isOn = true;
     public Sprite[] sprites;
     private Image m_image;
+
     void Start()
     {
         m_ai = GameObject.FindGameObjectWithTag("AI");

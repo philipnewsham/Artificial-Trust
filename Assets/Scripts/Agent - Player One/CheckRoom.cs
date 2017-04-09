@@ -57,28 +57,27 @@ public class CheckRoom : MonoBehaviour
             else
                 m_checkingWaitAI = false;
 
+            if(m_currentObjectiveInt == 0 && m_roomNo == 0)
+            {
+                UpdateObjectiveText();
+            }
 
+            if(m_currentObjectiveInt == 2 && m_roomNo == 1)
+            {
+                UpdateObjectiveText();
+            }
+
+            if(m_currentObjectiveInt == 4 && m_roomNo == 2)
+            {
+                UpdateObjectiveText();
+            }
+            
             /*
-            if(m_currentObjectiveInt == 0 && roomNo == 0)
-            {
-                UpdateObjectiveText();
-            }
-
-            if(m_currentObjectiveInt == 2 && roomNo == 1)
-            {
-                UpdateObjectiveText();
-            }
-
-            if(m_currentObjectiveInt == 4 && roomNo == 2)
-            {
-                UpdateObjectiveText();
-            }
-            */
-
             if (m_currentObjectiveInt == (m_roomNo / 2) && m_introObjectives)
             {
                 UpdateObjectiveText();
             }
+            */
         }
 	}
 
@@ -120,10 +119,15 @@ public class CheckRoom : MonoBehaviour
     public void UpdateObjectiveText()
     {
         m_currentObjectiveInt += 1;
-        objectiveText.text = string.Format("Current Objective: {0}", m_objectives[m_currentObjectiveInt]);
-        if(m_currentObjectiveInt >= 6)
+        
+        if(m_currentObjectiveInt >= m_objectives.Length)
         {
             m_introObjectives = false;
+            objectiveText.text = "";
+        }
+        else
+        {
+            objectiveText.text = string.Format("Current Objective: {0}", m_objectives[m_currentObjectiveInt]);
         }
     }
 }

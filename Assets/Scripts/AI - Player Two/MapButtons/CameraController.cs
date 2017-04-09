@@ -185,6 +185,7 @@ public class CameraController : MonoBehaviour
             m_blindTime = false;
         }
     }
+
     float m_blindTimeTarget;
     bool m_blindObjective;
     public void BlindObjective(float time)

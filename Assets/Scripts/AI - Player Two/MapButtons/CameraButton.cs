@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+
 public class CameraButton : MonoBehaviour 
 {
 	public int cameraID;
@@ -20,8 +21,9 @@ public class CameraButton : MonoBehaviour
 	public void Power()
 	{
 		m_isOn = !m_isOn;
+        print("check 1");
 		m_cameraController.CameraSwitch(cameraID);
-
+        print("check 2");
 		if(m_isOn)
 		{
 			m_image.sprite = sprites[0];
