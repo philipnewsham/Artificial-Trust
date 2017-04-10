@@ -45,8 +45,8 @@ public class GeometricView : MonoBehaviour
 		{
 			spotlights [i].color = lightColours [1];
 		}
-		m_doorController.Locking (0);
-		m_doorController.Locking (3);
+		//m_doorController.Locking (0);
+		//m_doorController.Locking (3);
         nextButton.interactable = true;
 		//puzzleAICanvas.SetActive (false);
 		//mainAICanvas.SetActive (true);

@@ -21,6 +21,7 @@ public class DoorController : MonoBehaviour
     
     void Start()
     {
+        
         m_aiPowerScript = gameObject.GetComponent<AIPower>();
         m_lockedDoorPower = m_aiPowerScript.doorLockedPower;
         m_unlockedDoorPower = m_aiPowerScript.doorUnlockedPower;
@@ -42,6 +43,13 @@ public class DoorController : MonoBehaviour
             }
         }
         //LockAllDoors();
+        m_specificDoorScripts[4].TutorialDoor(true);
+        //Invoke("FirstDoor", 1f);
+    }
+
+    void FirstDoor()
+    {
+        m_specificDoorScripts[4].TutorialDoor(true);
     }
 
     public void ChangeDoorState(int doorNo)
@@ -185,5 +193,10 @@ public class DoorController : MonoBehaviour
         {
             doorButtons[i].interactable = true;
         }
+    }
+
+    public void TutorialOpenDoors(int doorNo, bool isOpening)
+    {
+        m_specificDoorScripts[doorNo].TutorialDoor(isOpening);
     }
 }

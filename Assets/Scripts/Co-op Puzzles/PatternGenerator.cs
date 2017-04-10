@@ -171,17 +171,19 @@ public class PatternGenerator : MonoBehaviour
             pairButtons[i].interactable = false;
         }
     }
-
+    public GameObject nextWayfinder;
     void Correct()
     {
         buttons[m_buttonPressed].interactable = false;
         buttons[m_buttonPressed].GetComponent<Image>().color = colours[1];
         m_isCorrect[m_buttonPressed] = true;
         m_currentCorrect += 1;
-        if (m_currentCorrect == 3)
+        if (m_currentCorrect == 1)
         {
             nextPuzzleButton.interactable = true;
-            m_doorController.Locking(2);
+            m_doorController.TutorialOpenDoors(2, true);
+            m_doorController.TutorialOpenDoors(5, false);
+            nextWayfinder.SetActive(true);
         }
     }
 

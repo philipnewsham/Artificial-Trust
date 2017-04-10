@@ -163,12 +163,17 @@ public class BinaryDecipher : MonoBehaviour
 	}
     public DoorController doorController;
     public Button nextPuzzleButton;
+    public GameObject nextWayfinder;
     void UnlockNextPuzzle()
     {
         //print("unlocknextpuzzle");
-        doorController.Locking(5);
-        doorController.Locking(1);
+        //doorController.Locking(5);
+        //doorController.Locking(1);
+        doorController.TutorialOpenDoors(5, true);
+        doorController.TutorialOpenDoors(1, true);
+        doorController.TutorialOpenDoors(4, false);
         nextPuzzleButton.interactable = true;
+        nextWayfinder.SetActive(true);
     }
 
 	void KeyWrong()

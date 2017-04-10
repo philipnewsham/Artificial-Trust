@@ -10,12 +10,12 @@ public class CheckRoom : MonoBehaviour
     private int m_currentObjectiveInt;
     private string[] m_objectives = new string[6]
     {
-        "Enter Main Laboratory",
-        "Solve Binary Puzzle",
-        "Enter Small Office",
-        "Solve Pattern Puzzle",
-        "Enter Server Room",
-        "Solve Geometry Puzzle"
+        "Follow the waypoints to the Main Laboratory",
+        "Work with the AI to solve Binary Puzzle",
+        "Follow the waypoints to the Small Office",
+        "Work with the AI to solve Pattern Puzzle",
+        "Follow the waypoints to the Server Room",
+        "Work with the AI to solve Geometry Puzzle"
     };
 	// Use this for initialization
 	void Start ()

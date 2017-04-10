@@ -33,7 +33,7 @@ public class SpecificDoor : MonoBehaviour {
     private bool m_inAction = false;
 
     private bool m_unlockedByScientist;
-    void Start()
+    void Awake()
     {
         m_ai = GameObject.FindGameObjectWithTag("AI");
         m_audioSource = gameObject.GetComponent<AudioSource>();
@@ -51,6 +51,20 @@ public class SpecificDoor : MonoBehaviour {
             OpenDoor();
         }
         CheckMaterial();
+    }
+
+    public void TutorialDoor(bool isOpening)
+    {
+        if(isOpening)
+        {
+            m_animator.SetTrigger("Open");
+            m_renderer.material = materials[1];
+        }
+        else
+        {
+            m_animator.SetTrigger("Closed");
+            m_renderer.material = materials[0];
+        }
     }
 
     public void Interact()
