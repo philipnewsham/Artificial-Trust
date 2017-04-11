@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 public class BinaryDecipher : MonoBehaviour 
 {
 	private string[] m_binaryAlphabet = new string[27] 
@@ -71,7 +72,43 @@ public class BinaryDecipher : MonoBehaviour
 	private int m_currentLetter;
 	public Material[] letterCubeMaterials;
     public GameObject lockOutPanel;
+    public GameObject letterButton;
+    public GameObject wordPanel;
+    public string[] possibleWord = new string[5]
+        {
+            "apple",
+            "march",
+            "mouse",
+            "clock",
+            "paint"
+        };
 
+    void Start()
+    {
+        CreateWord();
+    }
+
+    void CreateWord()
+    {
+        string currentWord = possibleWord[Random.Range(0, possibleWord.Length)];
+        char[] currentWordSplit = currentWord.ToCharArray();
+        ArrayList<
+        for (int i = 0; i < currentWordSplit.Length; i++)
+        {
+            GameObject currentButton = Instantiate(letterButton, transform.position, Quaternion.identity) as GameObject;
+            currentButton.transform.parent = wordPanel.transform;
+            string currentLetter = currentWordSplit[i].ToString();
+            for (int j = 0; j < m_alphabet.Length; j++)
+            {
+                if (currentLetter == m_alphabet[j])
+                {
+                    currentButton.GetComponentInChildren<Text>().text = m_binaryAlphabet[j];
+                }
+            }
+            
+        }
+
+    }
 	public void ClickedButton(string text)
 	{
 		//check which letter it is (i.e 0110 0001 == a)

@@ -8,6 +8,12 @@ public class TextHoverTest : MonoBehaviour {
     public Color32[] textColours;
     public Text text;
     public Image image;
+
+    void Start()
+    {
+        text = GetComponentInChildren<Text>();
+        image = GetComponentInChildren<Image>();
+    }
 	public void HoverOver (bool isHovering)
     {
 		if(isHovering)
