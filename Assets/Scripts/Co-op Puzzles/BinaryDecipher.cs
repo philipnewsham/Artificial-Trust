@@ -67,7 +67,7 @@ public class BinaryDecipher : MonoBehaviour
 	};
 
     public Button[] buttons;
-    public Button[] backupButtons;
+	private Button[] backupButtons = new Button[5];
 	public GameObject[] letterCubes;
 	private int m_currentLetter;
 	public Material[] letterCubeMaterials;
@@ -83,6 +83,8 @@ public class BinaryDecipher : MonoBehaviour
             "paint"
         };
 
+	public Animator cursorAnim;
+
     void Start()
     {
         CreateWord();
@@ -92,7 +94,7 @@ public class BinaryDecipher : MonoBehaviour
     {
         string currentWord = possibleWord[Random.Range(0, possibleWord.Length)];
         char[] currentWordSplit = currentWord.ToCharArray();
-        ArrayList<
+		//List<Button> usingButtons = new List<Button>();
         for (int i = 0; i < currentWordSplit.Length; i++)
         {
             GameObject currentButton = Instantiate(letterButton, transform.position, Quaternion.identity) as GameObject;
@@ -105,16 +107,19 @@ public class BinaryDecipher : MonoBehaviour
                     currentButton.GetComponentInChildren<Text>().text = m_binaryAlphabet[j];
                 }
             }
-            
+			backupButtons [i] = currentButton.GetComponent<Button>();
         }
 
+
     }
-	public void ClickedButton(string text)
+	public Text currentBinaryText;
+	public void ClickedButton(string thisText)
 	{
+		currentBinaryText.text = thisText;
 		//check which letter it is (i.e 0110 0001 == a)
 		for (int i = 0; i < m_binaryAlphabet.Length; i++) 
 		{
-			if (text == m_binaryAlphabet [i]) 
+			if (thisText == m_binaryAlphabet [i]) 
 			{
 				//Debug.LogFormat ("This is the {0} letter of the alphabet", i + 1);
 				m_currentLetter = i;
@@ -152,6 +157,7 @@ public class BinaryDecipher : MonoBehaviour
 			if(Input.inputString == m_alphabet[i])
 			{
                 showLetterText.text = m_alphabet[i];
+				cursorAnim.SetBool ("LetterTyped", true);
 				if (Input.inputString == m_alphabet [m_currentLetter]) 
 				{
 					//print ("right letter!");
@@ -179,16 +185,11 @@ public class BinaryDecipher : MonoBehaviour
             KeyWrong();
         }
         showLetterText.text = "";
+		cursorAnim.SetBool ("LetterTyped", false);
     }
     int m_lettersCorrect = 0;
 	void KeyCorrect()
 	{
-        m_lettersCorrect += 1;
-        if (m_lettersCorrect == 4)
-        {
-            UnlockNextPuzzle();
-        }
-
         for (int i = 0; i < backupButtons.Length; i++)
         {
             if(backupButtons[i].GetComponentInChildren<Text>().text == m_binaryAlphabet[m_currentLetter])
@@ -197,6 +198,17 @@ public class BinaryDecipher : MonoBehaviour
                 backupButtons[i].interactable = false;
             }
         }
+
+		m_lettersCorrect = 0;
+		for (int i = 0; i < 5; i++) 
+		{
+			if (backupButtons [i].interactable == false)
+				m_lettersCorrect += 1;
+		}
+		if (m_lettersCorrect == backupButtons.Length)
+		{
+			UnlockNextPuzzle();
+		}
 	}
     public DoorController doorController;
     public Button nextPuzzleButton;

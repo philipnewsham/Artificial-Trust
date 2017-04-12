@@ -16,12 +16,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000012844987654}
-  - 33: {fileID: 33000012991848340}
-  - 136: {fileID: 136000012858665570}
-  - 23: {fileID: 23000010856849588}
+  - component: {fileID: 4000012844987654}
+  - component: {fileID: 33000012991848340}
+  - component: {fileID: 136000012858665570}
+  - component: {fileID: 23000010856849588}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -34,15 +34,15 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010658029252}
-  - 143: {fileID: 143000011094992762}
-  - 114: {fileID: 114000011025302318}
-  - 54: {fileID: 54000013980705394}
-  - 82: {fileID: 82000010382156120}
-  - 136: {fileID: 136000010911371480}
-  - 114: {fileID: 114000012318166052}
+  - component: {fileID: 4000010658029252}
+  - component: {fileID: 143000011094992762}
+  - component: {fileID: 114000011025302318}
+  - component: {fileID: 54000013980705394}
+  - component: {fileID: 82000010382156120}
+  - component: {fileID: 136000010911371480}
+  - component: {fileID: 114000012318166052}
   m_Layer: 0
   m_Name: RobotBodyFPC
   m_TagString: Untagged
@@ -55,12 +55,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000013541058160}
-  - 33: {fileID: 33000013382139832}
-  - 136: {fileID: 136000012081836672}
-  - 23: {fileID: 23000012811314552}
+  - component: {fileID: 4000013541058160}
+  - component: {fileID: 33000013382139832}
+  - component: {fileID: 136000012081836672}
+  - component: {fileID: 23000012811314552}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -73,16 +73,18 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010949941758}
-  - 114: {fileID: 114000010839677626}
-  - 114: {fileID: 114000012333467278}
-  - 114: {fileID: 114000011453330760}
-  - 114: {fileID: 114000012601418906}
-  - 114: {fileID: 114000011720454050}
-  - 114: {fileID: 114000014040284594}
-  - 114: {fileID: 114000012430745214}
+  - component: {fileID: 4000010949941758}
+  - component: {fileID: 114000010839677626}
+  - component: {fileID: 114000012333467278}
+  - component: {fileID: 114000011453330760}
+  - component: {fileID: 114000012601418906}
+  - component: {fileID: 114000011720454050}
+  - component: {fileID: 114000014040284594}
+  - component: {fileID: 114000012430745214}
+  - component: {fileID: 114849526035745462}
+  - component: {fileID: 114693778341400078}
   m_Layer: 0
   m_Name: AI
   m_TagString: AI
@@ -95,12 +97,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000013127381366}
-  - 33: {fileID: 33000012691747808}
-  - 136: {fileID: 136000014118365328}
-  - 23: {fileID: 23000010157200436}
+  - component: {fileID: 4000013127381366}
+  - component: {fileID: 33000012691747808}
+  - component: {fileID: 136000014118365328}
+  - component: {fileID: 23000010157200436}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -113,18 +115,24 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000013204763354}
-  - 143: {fileID: 143000013626707852}
-  - 114: {fileID: 114000011709408614}
-  - 54: {fileID: 54000011797520682}
-  - 82: {fileID: 82000011777628222}
-  - 136: {fileID: 136000013565544854}
-  - 114: {fileID: 114000010113689920}
+  - component: {fileID: 4000013204763354}
+  - component: {fileID: 143000013626707852}
+  - component: {fileID: 114000011709408614}
+  - component: {fileID: 54000011797520682}
+  - component: {fileID: 82000011777628222}
+  - component: {fileID: 136000013565544854}
+  - component: {fileID: 114000010113689920}
+  - component: {fileID: 114553519606587628}
+  - component: {fileID: 114958742130886446}
+  - component: {fileID: 114142637012621696}
+  - component: {fileID: 114228413149198600}
+  - component: {fileID: 114016673585314356}
+  - component: {fileID: 114995470350117872}
   m_Layer: 0
-  m_Name: Scientist
-  m_TagString: Scientist
+  m_Name: Agent
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,13 +142,13 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000011805695356}
-  - 20: {fileID: 20000011074457120}
-  - 81: {fileID: 81000012729328266}
-  - 124: {fileID: 124000010667702992}
-  - 114: {fileID: 114000012024838856}
+  - component: {fileID: 4000011805695356}
+  - component: {fileID: 20000011074457120}
+  - component: {fileID: 81000012729328266}
+  - component: {fileID: 124000010667702992}
+  - component: {fileID: 114000012024838856}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -153,9 +161,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000011196965326}
+  - component: {fileID: 4000011196965326}
   m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
@@ -168,13 +176,13 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000012194159752}
-  - 20: {fileID: 20000013116805552}
-  - 81: {fileID: 81000010375448254}
-  - 124: {fileID: 124000011145777730}
-  - 114: {fileID: 114000012717913248}
+  - component: {fileID: 4000012194159752}
+  - component: {fileID: 20000013116805552}
+  - component: {fileID: 81000010375448254}
+  - component: {fileID: 124000011145777730}
+  - component: {fileID: 114000012717913248}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -191,13 +199,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
   m_LocalPosition: {x: -3.09, y: 1, z: 3.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children:
   - {fileID: 4000012194159752}
   - {fileID: 4000013541058160}
   - {fileID: 4000013127381366}
   m_Father: {fileID: 4000011196965326}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4000010949941758
 Transform:
   m_ObjectHideFlags: 1
@@ -207,10 +215,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000011196965326}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000011196965326
 Transform:
   m_ObjectHideFlags: 1
@@ -220,26 +228,26 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013204763354}
   - {fileID: 4000010949941758}
   - {fileID: 4000010658029252}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000011805695356
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013898584196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.79999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013204763354}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012194159752
 Transform:
   m_ObjectHideFlags: 1
@@ -249,10 +257,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010658029252}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012844987654
 Transform:
   m_ObjectHideFlags: 1
@@ -262,10 +270,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013204763354}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000013127381366
 Transform:
   m_ObjectHideFlags: 1
@@ -275,25 +283,25 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010658029252}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000013204763354
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013820731908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.71, y: 1, z: -4.11}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 12.83, y: 1, z: 3.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011805695356}
   - {fileID: 4000012844987654}
   m_Father: {fileID: 4000011196965326}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4000013541058160
 Transform:
   m_ObjectHideFlags: 1
@@ -303,10 +311,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010658029252}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20000011074457120
 Camera:
   m_ObjectHideFlags: 1
@@ -389,7 +397,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -397,7 +407,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -418,7 +428,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -426,7 +438,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -447,7 +459,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -455,7 +469,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -543,24 +557,27 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
+  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 1
+    - serializedVersion: 2
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -571,7 +588,8 @@ AudioSource:
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -582,7 +600,8 @@ AudioSource:
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -593,7 +612,8 @@ AudioSource:
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -617,6 +637,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
+  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -629,12 +650,14 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 1
+    - serializedVersion: 2
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -645,7 +668,8 @@ AudioSource:
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -656,7 +680,8 @@ AudioSource:
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -667,7 +692,8 @@ AudioSource:
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -748,6 +774,8 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
     lockCursor: 1
+    alternateControlSchemeScreen: 0
+    alternateControlSchemeMouse: 0
   m_UseFovKick: 1
   m_FovKick:
     Camera: {fileID: 0}
@@ -758,12 +786,14 @@ MonoBehaviour:
     IncreaseCurve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 2
+        time: 0
         value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 1
+      - serializedVersion: 2
+        time: 1
         value: 1
         inSlope: 2
         outSlope: 2
@@ -778,27 +808,32 @@ MonoBehaviour:
     Bobcurve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 2
+        time: 0
         value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 0.5
+      - serializedVersion: 2
+        time: 0.5
         value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 1
+      - serializedVersion: 2
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 1.5
+      - serializedVersion: 2
+        time: 1.5
         value: -1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 2
+      - serializedVersion: 2
+        time: 2
         value: 0
         inSlope: 0
         outSlope: 0
@@ -816,6 +851,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  alternativeControlMouse: 0
+  alternativeControlScreen: 0
+  touchVertical: 0
+  vertical: 0
 --- !u!114 &114000011453330760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -836,9 +875,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  unlockingTime: 10
-  openingTime: 3
-  doorButtons: []
+  unlockingTime: 5
+  openingTime: 1
+  doorButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   taskLogScript: {fileID: 0}
 --- !u!114 &114000011709408614
 MonoBehaviour:
@@ -853,7 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isScientist: 1
   m_IsWalking: 0
-  m_WalkSpeed: 4
+  m_WalkSpeed: 5
   m_RunSpeed: 10
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 10
@@ -868,6 +915,8 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
     lockCursor: 0
+    alternateControlSchemeScreen: 0
+    alternateControlSchemeMouse: 0
   m_UseFovKick: 1
   m_FovKick:
     Camera: {fileID: 0}
@@ -878,12 +927,14 @@ MonoBehaviour:
     IncreaseCurve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 2
+        time: 0
         value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 1
+      - serializedVersion: 2
+        time: 1
         value: 1
         inSlope: 2
         outSlope: 2
@@ -898,27 +949,32 @@ MonoBehaviour:
     Bobcurve:
       serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 2
+        time: 0
         value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 0.5
+      - serializedVersion: 2
+        time: 0.5
         value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 1
+      - serializedVersion: 2
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 1.5
+      - serializedVersion: 2
+        time: 1.5
         value: -1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
-      - time: 2
+      - serializedVersion: 2
+        time: 2
         value: 0
         inSlope: 0
         outSlope: 0
@@ -936,6 +992,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  alternativeControlMouse: 0
+  alternativeControlScreen: 0
+  touchVertical: 0
+  vertical: 0
 --- !u!114 &114000011720454050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -979,6 +1039,8 @@ MonoBehaviour:
   interactText: {fileID: 0}
   aButton: {fileID: 0}
   scientistRules: {fileID: 0}
+  waitImage: {fileID: 0}
+  maxHold: 2
 --- !u!114 &114000012318166052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1016,7 +1078,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   taskLogScript: {fileID: 0}
-  lightButtons: []
+  agentObjectiveScript: {fileID: 114142637012621696}
+  lightButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114000012430745214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1081,8 +1152,36 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  cameraButtons: []
+  cameraButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   taskLogScript: {fileID: 0}
+  agentObjectiveScript: {fileID: 114142637012621696}
+  cameraText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cameraRecImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentCameraNo: 0
 --- !u!114 &114000012717913248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1099,6 +1198,8 @@ MonoBehaviour:
   interactText: {fileID: 0}
   aButton: {fileID: 0}
   scientistRules: {fileID: 0}
+  waitImage: {fileID: 0}
+  maxHold: 0
 --- !u!114 &114000014040284594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1110,9 +1211,118 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4c976e5a0627547aef1e73ba527bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winConditions: []
-  completedTask: 1
-  scientistLoseCanvas: {fileID: 0}
+  mainObjective: 0
+  completedMission: 0
+--- !u!114 &114016673585314356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ca2796d6493cf4eb1bdb5cd58018a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSpeed: 0
+  lookSensitivity: 0.7
+  virtualJoystick: {fileID: 0}
+--- !u!114 &114142637012621696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477f63e1f8d81784baa29d66d70f23ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveText: {fileID: 0}
+  objectiveTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lightController: {fileID: 114000012333467278}
+  switchesScript: {fileID: 0}
+  switchOffAIScript: {fileID: 0}
+--- !u!114 &114228413149198600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04148ccd676fad409d8fb502ab9b84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSpeed: 2
+  mouseSensitivitySlider: {fileID: 0}
+--- !u!114 &114553519606587628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4107b87bb7842f44eb58be0ba989d12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightController: {fileID: 114000012333467278}
+  objectiveText: {fileID: 0}
+--- !u!114 &114693778341400078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012324150522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb38e206bb7525940bfcdd7b181d63da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiMessageText: {fileID: 0}
+  scientistRecieveText: {fileID: 0}
+--- !u!114 &114849526035745462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012324150522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ea48843c436be4c9ea7a9142264829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveText: {fileID: 0}
+  checkRoomScript: {fileID: 114995470350117872}
+--- !u!114 &114958742130886446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd60d00870aa62444b4ce6e78cb5780d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114995470350117872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd3e8c1a03b79c46a95ee9708c20311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNameText: {fileID: 0}
+  objectiveText: {fileID: 0}
+  aiObjectiveScript: {fileID: 114849526035745462}
 --- !u!124 &124000010667702992
 Behaviour:
   m_ObjectHideFlags: 1

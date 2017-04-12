@@ -5,18 +5,22 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 405604}
-  - 114: {fileID: 11469062}
-  - 114: {fileID: 11478566}
-  - 114: {fileID: 11405698}
-  - 114: {fileID: 11475332}
-  - 114: {fileID: 11428236}
-  - 114: {fileID: 11412756}
+  - component: {fileID: 405604}
+  - component: {fileID: 11469062}
+  - component: {fileID: 11478566}
+  - component: {fileID: 11405698}
+  - component: {fileID: 11475332}
+  - component: {fileID: 11428236}
+  - component: {fileID: 11412756}
+  - component: {fileID: 114045190701578366}
+  - component: {fileID: 114157016385104408}
+  - component: {fileID: 114357773571091136}
+  - component: {fileID: 114989776428569896}
   m_Layer: 0
   m_Name: Game Controller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,10 +34,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 4918356410066582}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11405698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -56,10 +61,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7bf6b1027ba0b44ac268cf4ff18190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleTimes: 
-  countingDown: 0
-  scientistLosesCanvas: {fileID: 0}
-  aiLosesCanvas: {fileID: 0}
+  aiWinScript: {fileID: 0}
+  agentWinScript: {fileID: 0}
+  elevatorScript: {fileID: 0}
+  timerTextboxes:
+  - {fileID: 0}
+  aiLoses: {fileID: 0}
+  aiWins: {fileID: 0}
+  agentWins: {fileID: 0}
+  agentLoses: {fileID: 0}
 --- !u!114 &11428236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,12 +106,45 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cameraButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   lightController: {fileID: 0}
   lightToggleInstantiateScript: {fileID: 0}
-  lightSwitchesAS: []
+  lightButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lightSwitchesAS:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   scientistComputerScript: {fileID: 0}
   panicButton: {fileID: 0}
-  switchedOffBlackMat: {fileID: 0}
+  switchedOffBlackMat: {fileID: 2100000, guid: 80a1fe5d10e1d5745999cbca176c0198, type: 2}
+  scientistRaycast: {fileID: 0}
+  geometricView: {fileID: 114508353622555326}
+  switchOffAI: {fileID: 0}
 --- !u!114 &11469062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +184,10 @@ MonoBehaviour:
   - {fileID: 0}
   safeLogic: {fileID: 0}
   robotBodyPasswordButtonScript: {fileID: 0}
+  documentButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11478566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,3 +218,281 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167606}
   m_IsPrefabParent: 1
+--- !u!1 &1961255200461612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4918356410066582}
+  - component: {fileID: 114626162875796466}
+  - component: {fileID: 114095669384954926}
+  - component: {fileID: 114508353622555326}
+  m_Layer: 0
+  m_Name: ChallengesController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4918356410066582
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961255200461612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 405604}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114045190701578366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b7bbbe1d0e364ca67dbaff74e826b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114095669384954926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961255200461612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e795a3989d1ab60449b951f8ea3dc60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  buttonTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lockOutScreen: {fileID: 0}
+  nextPuzzleButton: {fileID: 0}
+  pairButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  colours:
+  - serializedVersion: 2
+    rgba: 4278251007
+  - serializedVersion: 2
+    rgba: 4278386432
+  - serializedVersion: 2
+    rgba: 4294967295
+  nextWayfinder: {fileID: 0}
+--- !u!114 &114157016385104408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167b5d0267667384187c9adc5655090d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotBody: {fileID: 0}
+  gameController: {fileID: 167606}
+  blackoutCanvas: {fileID: 0}
+  ai: {fileID: 0}
+  m_actions:
+  - do nothing
+  - initiate countdown sequence
+  - send AI into lockdown mode
+  - unlock the robot-body
+  - give the AI additional power
+  - take away power from the AI
+  - lock all doors
+  - change the power value of a certain object
+  aiButtonPressedGO: {fileID: 0}
+  aiKnowledgeText: {fileID: 0}
+  scientistButtonPressedGO: {fileID: 0}
+  scientistKnowledgeText: {fileID: 0}
+  doorToggleInstantiateScript: {fileID: 0}
+--- !u!114 &114357773571091136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d20b35cc7a3cc4394a96f5d3099968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableObjects: []
+  blankMaterial: {fileID: 2100000, guid: 80a1fe5d10e1d5745999cbca176c0198, type: 2}
+--- !u!114 &114508353622555326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961255200461612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2be5cd9999ba3048b696db6b6b598f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainImage: {fileID: 0}
+  differentViewSprites:
+  - {fileID: 21300000, guid: f68d946b9a8dadc4cbcf6c0ce992fa4f, type: 3}
+  - {fileID: 21300000, guid: 44f0df56d35f8ef4c83342872155d498, type: 3}
+  - {fileID: 21300000, guid: ed2d18b93bfcd424d89ed6cb1975a09c, type: 3}
+  - {fileID: 21300000, guid: b0d06dcc593bec641bb739d1b7b4cfaf, type: 3}
+  - {fileID: 21300000, guid: b41e28c5e104a984e9355af977328f96, type: 3}
+  - {fileID: 21300000, guid: f5b8c77b84dd765449c2f3e0edeae655, type: 3}
+  correctShape: 0
+  spotlights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  lightColours:
+  - serializedVersion: 2
+    rgba: 4294967295
+  - serializedVersion: 2
+    rgba: 4286237034
+  - serializedVersion: 2
+    rgba: 4281216677
+  mainAICanvas: {fileID: 0}
+  puzzleAICanvas: {fileID: 0}
+  nextButton: {fileID: 0}
+--- !u!114 &114626162875796466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961255200461612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12bb528d0d2f5074f82684ded790dfdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  letterCubes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  letterCubeMaterials:
+  - {fileID: 2100000, guid: 80a1fe5d10e1d5745999cbca176c0198, type: 2}
+  - {fileID: 2100000, guid: 9c3cb52ac2059d149b52eee884e07680, type: 2}
+  lockOutPanel: {fileID: 0}
+  letterButton: {fileID: 1377038766748160, guid: 5f985b19295e23440b9d2b19cfa63e93,
+    type: 2}
+  wordPanel: {fileID: 0}
+  possibleWord:
+  - apple
+  - march
+  - mouse
+  - clock
+  - paint
+  showLetterText: {fileID: 0}
+  doorController: {fileID: 0}
+  nextPuzzleButton: {fileID: 0}
+  nextWayfinder: {fileID: 0}
+--- !u!114 &114989776428569896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fb6c0a10a20a745935cb3136a3c207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveTextboxes:
+  - {fileID: 0}
+  - {fileID: 0}
