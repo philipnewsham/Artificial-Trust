@@ -9,11 +9,29 @@ public class UpdatedElevator : MonoBehaviour
 
     public bool agentEscaped;
     public bool aiEscaped;
-	
+
+    public Timer timerScript;
+
+    public GameObject aiEnd;
+    public GameObject aiLoses;
+    public GameObject aiWins;
+
+    public GameObject agentEnd;
+    public GameObject agentWins;
+    public GameObject agentLoses;
+
+    private Animator m_animator;
+
+    void Start()
+    {
+        m_animator = GetComponentInChildren<Animator>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Agent")
         {
+            print("man entered");
             if (agentWinScript.completedMission == true)
             {
                 if (agentWinScript.mainObjective == 0)
@@ -23,21 +41,32 @@ public class UpdatedElevator : MonoBehaviour
                         if (aiEscaped)
                         {
                             //end
+                            //agentEnd.SetActive(true);
+                            //agentWins.SetActive(true);
                         }
                         else
                         {
-                            //increase timer Speed
+                            timerScript.ChangeMultiplier(1.5f);
                         }
+                        agentEnd.SetActive(true);
+                        agentWins.SetActive(true);
                     }
                     else 
                     {
                         //AI shuts down
+                        aiEnd.SetActive(true);
+                        aiLoses.SetActive(true);
+                        agentEnd.SetActive(true);
+                        agentWins.SetActive(true);
                     }
                 }
                 else
                 {
                     //win
+                    agentEnd.SetActive(true);
+                    agentWins.SetActive(true);
                 }
+                m_animator.SetTrigger("Close");
             }
         }
 
@@ -47,11 +76,13 @@ public class UpdatedElevator : MonoBehaviour
             {
                 if(agentWinScript.mainObjective == 0 && !agentEscaped)
                 {
-                    //increase timer speed
+                    timerScript.ChangeMultiplier(1.5f);
                 }
                 else if(agentWinScript.mainObjective == 1)
                 {
                     //agent failed
+                    agentEnd.SetActive(true);
+                    agentWins.SetActive(true);
                 }
             }
         }

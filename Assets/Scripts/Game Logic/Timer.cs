@@ -18,6 +18,11 @@ public class Timer : MonoBehaviour
         m_isCountingDown = true;
     }
 
+    public void ChangeMultiplier(float newMult)
+    {
+        m_multiplier = newMult;
+    }
+
     void Update()
     {
         if(m_isCountingDown)
@@ -34,8 +39,11 @@ public class Timer : MonoBehaviour
             }
         }
     }
+    public GameObject aiEnd;
     public GameObject aiLoses;
     public GameObject aiWins;
+
+    public GameObject agentEnd;
     public GameObject agentWins;
     public GameObject agentLoses;
     void GameOver()

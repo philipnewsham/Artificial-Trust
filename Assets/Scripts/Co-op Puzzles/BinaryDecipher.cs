@@ -188,6 +188,7 @@ public class BinaryDecipher : MonoBehaviour
 		cursorAnim.SetBool ("LetterTyped", false);
     }
     int m_lettersCorrect = 0;
+    public Text[] sideButtons;
 	void KeyCorrect()
 	{
         for (int i = 0; i < backupButtons.Length; i++)
@@ -196,6 +197,14 @@ public class BinaryDecipher : MonoBehaviour
             {
                 backupButtons[i].GetComponentInChildren<Text>().text = m_alphabet[m_currentLetter];
                 backupButtons[i].interactable = false;
+            }
+        }
+
+        for (int i = 0; i < sideButtons.Length; i++)
+        {
+            if(sideButtons[i].text == m_binaryAlphabet[m_currentLetter])
+            {
+                sideButtons[i].text = m_alphabet[m_currentLetter];
             }
         }
 
