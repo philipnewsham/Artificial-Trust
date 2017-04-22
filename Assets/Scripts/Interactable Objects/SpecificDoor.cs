@@ -154,7 +154,7 @@ public class SpecificDoor : MonoBehaviour {
         {
             m_locked = false;
             m_renderer.material = materials[1];
-            doorToggleInstantiateScript.DisabledLock(m_doorID);
+            //doorToggleInstantiateScript.DisabledLock(m_doorID);
             m_unlockedByScientist = false;
         }
         UnlockedSound();
