@@ -59,8 +59,8 @@ public class CameraController : MonoBehaviour
             m_camerasOn[camNo] = !m_camerasOn[camNo];
             m_aiPowerScript.PowerExchange(m_cameraPower);
             taskLogScript.UpdateText("Camera", camNo, 1);
-            cameraText[camNo].text = "Offline";
-            cameraRecImage[camNo].SetActive(false);
+            //cameraText[camNo].text = "Offline";
+            //cameraRecImage[camNo].SetActive(false);
         }
         else
         {
@@ -71,8 +71,8 @@ public class CameraController : MonoBehaviour
                 m_camerasOn[camNo] = !m_camerasOn[camNo];
                 m_aiPowerScript.PowerExchange(-m_cameraPower);
                 taskLogScript.UpdateText("Camera", camNo, 0);
-                cameraText[camNo].text = "Recording";
-                cameraRecImage[camNo].SetActive(true);
+                //cameraText[camNo].text = "Recording";
+                //cameraRecImage[camNo].SetActive(true);
             }
         }
         CheckCameras();
@@ -210,6 +210,7 @@ public class CameraController : MonoBehaviour
     }
 
     public int currentCameraNo;
+    /*
     public void ChangeSingleCameraForward()
     {
         currentCameraNo = (currentCameraNo + 1) % cameras.Length;
@@ -223,6 +224,27 @@ public class CameraController : MonoBehaviour
             {
                 cameraGameObjects[i].SetActive(false);
             }
+        }
+    }
+    */
+    public Text roomNameText;
+    private string[] roomNames = new string[8] { "Main Laboratory","Corridor Two", "Corridor Three", "Server Room", "Small Office", "Dr. Kirkoff's Office", "Corridor One",  "AI Hub"};
+    public void ChangeSingleCameraForward()
+    {
+        currentCameraNo = (currentCameraNo + 1) % cameras.Length;
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameraGameObjects[i].SetActive(false);
+        }
+
+        if (cameraGameObjects[currentCameraNo].GetComponentInChildren<Camera>().enabled)
+        {
+            cameraGameObjects[currentCameraNo].SetActive(true);
+        }
+        else
+        {
+            cameraGameObjects[8].SetActive(true);
+            roomNameText.text = roomNames[currentCameraNo];
         }
     }
 
