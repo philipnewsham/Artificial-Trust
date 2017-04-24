@@ -72,6 +72,7 @@ public class Timer : MonoBehaviour
         {
             if(aiWinScript.mainObjective == 1)
             {
+                print("AI won 1");
                 aiWins.SetActive(true);
             }
             agentLoses.SetActive(true);
@@ -83,10 +84,12 @@ public class Timer : MonoBehaviour
 
         if(!elevatorScript.aiEscaped && aiWinScript.mainObjective == 0)
         {
+            print("AI lost");
             aiLoses.SetActive(true);
         }
         else if (elevatorScript.aiEscaped && aiWinScript.mainObjective == 0)
         {
+            print("ai Won 2");
             aiWins.SetActive(true);
         }
     }

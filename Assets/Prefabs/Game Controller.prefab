@@ -61,13 +61,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7bf6b1027ba0b44ac268cf4ff18190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTime: 0
+  isTesting: 0
   aiWinScript: {fileID: 0}
   agentWinScript: {fileID: 0}
   elevatorScript: {fileID: 0}
   timerTextboxes:
   - {fileID: 0}
+  - {fileID: 0}
+  aiEnd: {fileID: 0}
   aiLoses: {fileID: 0}
   aiWins: {fileID: 0}
+  agentEnd: {fileID: 0}
   agentWins: {fileID: 0}
   agentLoses: {fileID: 0}
 --- !u!114 &11428236
@@ -335,7 +340,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1d20b35cc7a3cc4394a96f5d3099968, type: 3}
   m_Name: 
@@ -356,8 +361,8 @@ MonoBehaviour:
   mainImage: {fileID: 0}
   differentViewSprites:
   - {fileID: 21300000, guid: f68d946b9a8dadc4cbcf6c0ce992fa4f, type: 3}
-  - {fileID: 21300000, guid: 44f0df56d35f8ef4c83342872155d498, type: 3}
   - {fileID: 21300000, guid: ed2d18b93bfcd424d89ed6cb1975a09c, type: 3}
+  - {fileID: 21300000, guid: 44f0df56d35f8ef4c83342872155d498, type: 3}
   - {fileID: 21300000, guid: b0d06dcc593bec641bb739d1b7b4cfaf, type: 3}
   - {fileID: 21300000, guid: b41e28c5e104a984e9355af977328f96, type: 3}
   - {fileID: 21300000, guid: f5b8c77b84dd765449c2f3e0edeae655, type: 3}
@@ -375,6 +380,8 @@ MonoBehaviour:
     rgba: 4281216677
   mainAICanvas: {fileID: 0}
   puzzleAICanvas: {fileID: 0}
+  artObjects:
+  - {fileID: 0}
   nextButton: {fileID: 0}
 --- !u!114 &114626162875796466
 MonoBehaviour:
@@ -478,7 +485,18 @@ MonoBehaviour:
   - mouse
   - clock
   - paint
+  cursorAnim: {fileID: 0}
+  currentBinaryText: {fileID: 0}
   showLetterText: {fileID: 0}
+  sideButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   doorController: {fileID: 0}
   nextPuzzleButton: {fileID: 0}
   nextWayfinder: {fileID: 0}
