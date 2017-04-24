@@ -1312,7 +1312,7 @@ GameObject:
   - component: {fileID: 114291328466506552}
   - component: {fileID: 114021354287477708}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,7 +1353,7 @@ GameObject:
   - component: {fileID: 114671053314664864}
   - component: {fileID: 114670718495371238}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 114140812433025126}
   - component: {fileID: 114917091670611868}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2511,7 +2511,7 @@ GameObject:
   - component: {fileID: 114841425544662136}
   - component: {fileID: 114962160722314402}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2793,7 +2793,7 @@ GameObject:
   - component: {fileID: 114884935217961088}
   - component: {fileID: 114375308879924346}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2887,7 +2887,7 @@ GameObject:
   - component: {fileID: 114671522523312594}
   - component: {fileID: 114383521757329134}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2945,7 +2945,7 @@ GameObject:
   - component: {fileID: 114223007804639036}
   - component: {fileID: 114281266644140662}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3365,7 +3365,7 @@ GameObject:
   - component: {fileID: 114304285980078002}
   - component: {fileID: 114951120561169988}
   m_Layer: 5
-  m_Name: DoorButton
+  m_Name: DoorButton (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8771,7 +8771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 0
+  doorID: 3
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}
@@ -9172,7 +9172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 5
+  buttonName: Door 0
   roomName: Main Laboratory
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114022386713308686
@@ -11182,7 +11182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 3
+  doorID: 2
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}
@@ -11704,7 +11704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 5
+  doorID: 0
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}
@@ -12841,7 +12841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 2
+  buttonName: Door 6
   roomName: Server Room
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114281486455804674
@@ -14441,7 +14441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 4
+  buttonName: Door 1
   roomName: Main Laboratory
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114376773683985848
@@ -14651,7 +14651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 1
+  buttonName: Door 7
   roomName: Small Office
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114383538683585304
@@ -17649,7 +17649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 2
+  doorID: 6
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}
@@ -18482,7 +18482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 7
+  doorID: 4
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}
@@ -18498,7 +18498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 1
+  doorID: 7
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}
@@ -19719,7 +19719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 7
+  buttonName: Door 4
   roomName: AI Hub
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114671053314664864
@@ -21687,7 +21687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 4
+  doorID: 1
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}
@@ -24216,7 +24216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 0
+  buttonName: Door 3
   roomName: Archive Room
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114917429748812466
@@ -25078,7 +25078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 6
+  buttonName: Door 5
   roomName: AI Hub
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114953134033443966
@@ -25180,7 +25180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76174745a7f7074b81c0c6d4ec5b612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonName: Door 3
+  buttonName: Door 2
   roomName: Dr. Kirkoff's Office
   hoverText: {fileID: 114370278000710246}
 --- !u!114 &114966875008818648
@@ -25404,7 +25404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec325bb5f541e345a7a9c040491cd77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorID: 6
+  doorID: 5
   sprites:
   - {fileID: 21300000, guid: 6c539d57ecfd2c24a9fe41f2a86ef98c, type: 3}
   - {fileID: 21300000, guid: 68d4d433159dab541bb75cd0eda765f3, type: 3}

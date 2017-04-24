@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
+    public float maxTime;
+    public bool isTesting;
+
     private float m_maxTime = 545f;
     private float m_count = 0f;
     private float m_multiplier = 1f;
@@ -13,6 +16,16 @@ public class Timer : MonoBehaviour
     public UpdatedElevator elevatorScript;
 
     public Text[] timerTextboxes;
+
+    void Start()
+    {
+        if(maxTime != 0f)
+            m_maxTime = maxTime;
+        
+        if (isTesting)
+            BeginCountdown();
+    }
+
     public void BeginCountdown()
     {
         m_isCountingDown = true;
@@ -36,6 +49,11 @@ public class Timer : MonoBehaviour
             if(m_count >= m_maxTime)
             {
                 m_isCountingDown = false;
+                for (int i = 0; i < timerTextboxes.Length; i++)
+                {
+                    timerTextboxes[i].text = string.Format("00:00");
+                }
+                GameOver();
             }
         }
     }
@@ -48,13 +66,15 @@ public class Timer : MonoBehaviour
     public GameObject agentLoses;
     void GameOver()
     {
+        agentEnd.SetActive(true);
+        aiEnd.SetActive(true);
         if (!elevatorScript.agentEscaped)
         {
             if(aiWinScript.mainObjective == 1)
             {
                 aiWins.SetActive(true);
             }
-            agentWins.SetActive(false);
+            agentLoses.SetActive(true);
         }
         else
         {
