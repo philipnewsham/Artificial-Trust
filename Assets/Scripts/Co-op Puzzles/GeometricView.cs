@@ -102,12 +102,19 @@ public class GeometricView : MonoBehaviour
 		//puzzleAICanvas.SetActive (false);
 		//mainAICanvas.SetActive (true);
 	}
-
+	public GameObject lockOutPanel;
 	void Incorrect()
 	{
 		for (int i = 0; i < 3; i++) 
 		{
 			spotlights [i].color = lightColours [2];
 		}
+		lockOutPanel.SetActive (true);
+		Invoke ("Unlock", 15f);
+	}
+
+	void Unlock()
+	{
+		lockOutPanel.SetActive (false);
 	}
 }

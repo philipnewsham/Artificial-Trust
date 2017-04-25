@@ -164,7 +164,7 @@ public class PatternGenerator : MonoBehaviour
             print("Incorrect");
             buttons[m_buttonPressed].GetComponent<Image>().color = colours[2];
             lockOutScreen.SetActive(true);
-            Invoke("Unlocked", 20f);
+            Invoke("Unlocked", 10f);
         }
         for (int i = 0; i < 4; i++)
         {
