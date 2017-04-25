@@ -22,22 +22,28 @@ public class GeometricView : MonoBehaviour
     public void ChangePicture(int direction)
     {
         m_currentSprite += direction;
+        /*
         for (int i = 0; i < 2; i++)
         {
             changeViewButtons[i].interactable = false;
         }
+        */
         m_currentRotation = new Vector3(artObjects[0].transform.eulerAngles.x, artObjects[0].transform.eulerAngles.y, artObjects[0].transform.eulerAngles.z);
         if (m_currentSprite == -1)
             m_currentSprite = differentViewSprites.Length - 1;
-        StartCoroutine("SpinArt");
+        //StartCoroutine("SpinArt");
+        for (int i = 0; i < artObjects.Length; i++)
+        {
+            artObjects[i].transform.eulerAngles = m_nextRotation[m_currentSprite % differentViewSprites.Length];
+        }
         mainImage.sprite = differentViewSprites[m_currentSprite % differentViewSprites.Length];
     }
     float count;
     public GameObject[] artObjects;
     private Vector3 m_currentRotation;
-    private Vector3[] m_nextRotation = new Vector3[6]
+    private Vector3[] m_nextRotation = new Vector3[4]
     {
-        new Vector3(0,0,0), new Vector3(0,90,0),new Vector3(0,180,0), new Vector3(0,270,0),new Vector3(90,0,0), new Vector3(-90,0,0)
+        new Vector3(0,0,0), new Vector3(0,90,0),new Vector3(0,180,0), new Vector3(0,270,0)/*,new Vector3(90,0,0), new Vector3(-90,0,0)*/
     };
     IEnumerator SpinArt()
     {

@@ -361,11 +361,9 @@ MonoBehaviour:
   mainImage: {fileID: 0}
   differentViewSprites:
   - {fileID: 21300000, guid: f68d946b9a8dadc4cbcf6c0ce992fa4f, type: 3}
-  - {fileID: 21300000, guid: ed2d18b93bfcd424d89ed6cb1975a09c, type: 3}
-  - {fileID: 21300000, guid: 44f0df56d35f8ef4c83342872155d498, type: 3}
   - {fileID: 21300000, guid: b0d06dcc593bec641bb739d1b7b4cfaf, type: 3}
-  - {fileID: 21300000, guid: b41e28c5e104a984e9355af977328f96, type: 3}
-  - {fileID: 21300000, guid: f5b8c77b84dd765449c2f3e0edeae655, type: 3}
+  - {fileID: 21300000, guid: 44f0df56d35f8ef4c83342872155d498, type: 3}
+  - {fileID: 21300000, guid: ed2d18b93bfcd424d89ed6cb1975a09c, type: 3}
   correctShape: 0
   spotlights:
   - {fileID: 0}
@@ -380,6 +378,9 @@ MonoBehaviour:
     rgba: 4281216677
   mainAICanvas: {fileID: 0}
   puzzleAICanvas: {fileID: 0}
+  changeViewButtons:
+  - {fileID: 0}
+  - {fileID: 0}
   artObjects:
   - {fileID: 0}
   nextButton: {fileID: 0}
