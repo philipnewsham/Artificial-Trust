@@ -33,7 +33,19 @@ public class CheckRoom : MonoBehaviour
     mission six: help AI - geometrypuzzlecomplete
 
     main:
-
+    Unlock the safe
+        1. Go to dr. Kirkoff's office
+        2. Find out the password
+            2a. Find out the password by asking the AI
+            2b. Find out the password in the small office
+        3. Find out the shape sequence
+            3a. Find out the sequence by asking the AI
+            3b. Find out the sequence in the small office
+        4. Find out the starsign
+            4a. Find out the starsign by asking the AI
+            4b. Find out the starsign in the small office
+        5. Unlock the Safe
+        6. Go to the elevator
     */
     bool m_introObjectives = true;
     int m_roomNo = 1;

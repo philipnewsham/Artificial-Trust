@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
-public class Safe : MonoBehaviour {
+public class Safe : MonoBehaviour
+{
     private string m_safePassword;
     private ReceivePasswords m_receivePasswordScript;
 
