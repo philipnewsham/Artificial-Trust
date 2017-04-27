@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class ScientistRaycast : MonoBehaviour {
+public class ScientistRaycast : MonoBehaviour 
+{
     public float distance;
     private float m_distance
     {
@@ -46,6 +47,8 @@ public class ScientistRaycast : MonoBehaviour {
 	bool m_isLooking;
 	bool m_countingDown;
 	bool m_doneLooking;
+
+	public GameObject currentObjectiveUI;
 
 	void Update ()
     {
@@ -107,10 +110,13 @@ public class ScientistRaycast : MonoBehaviour {
 			}
 		}
 	}
+	public FreezeControls freezeControlScript;
     public void CheckMap()
     {
         m_showingRules = !m_showingRules;
         scientistRules.SetActive(m_showingRules);
+		currentObjectiveUI.SetActive (!m_showingRules);
+		freezeControlScript.FirstPersonControllerEnabled(!m_showingRules);
     }
 	public void Interacted()
 	{

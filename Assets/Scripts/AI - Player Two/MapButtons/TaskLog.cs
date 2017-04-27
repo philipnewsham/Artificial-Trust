@@ -18,4 +18,5 @@ public class TaskLog : MonoBehaviour
         m_newLine += string.Format("\n{0} {1} {2}",objectType,objectNo.ToString(),m_stateString[objectState]);
         m_taskLogText.text = m_newLine; 
     }
+
 }

@@ -75,7 +75,7 @@ public class AgentObjectives : MonoBehaviour
             m_lightOnGoalNo = goalNo;
 			m_isLightObjectective = true;
             m_lightAmount = Random.Range(0, 8);
-			m_goalTexts[goalNo] = string.Format("Have {0} lights on at the same time", m_lightAmount);
+			m_goalTexts[goalNo] = string.Format("Have [{0}] lights on at the same time", m_lightAmount);
         }
         else
         {
@@ -102,7 +102,7 @@ public class AgentObjectives : MonoBehaviour
 			cameraOnGoalNo = goalNo;
 			m_isCameraObjective = true;
             m_cameraAmount = Random.Range(0, 8);
-			m_goalTexts[goalNo] = string.Format("Have {0} cameras enabled at the same time", m_cameraAmount);
+			m_goalTexts[goalNo] = string.Format("Have [{0}] cameras enabled at the same time", m_cameraAmount);
         }
         else
         {

@@ -35,7 +35,7 @@ public class PasswordGenerator : MonoBehaviour {
         m_receivePasswordsKeys = receivePasswordsKeys;
         m_receivePasswordsLocks = receivePasswordsLocks;
         m_allPasswords = new string[m_receivePasswordsKeys.Count];
-        m_safeLocksScript = safeLogic.GetComponent<SafeLocks>();
+		m_safeLocksScript = safeLogic.GetComponent<SafeLocks>();
         m_hackingDocumentScript = ai.GetComponent<HackingDocuments>();
         m_passwordSavingScript = gameObject.GetComponent<Passwords>();
 

@@ -8,20 +8,38 @@ public class CheckRoom : MonoBehaviour
     public Text roomNameText;
     public Text objectiveText;
     private int m_currentObjectiveInt;
+
+	public Button[] mapLocations;
+	private Sprite[] m_locationSprites;
+	public Sprite standingMan;
+	public Sprite wayPoint;
+
+	int mapButtonLength;
+
+	private AgentObjectiveText m_agentObjectiveTextScript;
     private string[] m_objectives = new string[6]
     {
         "Follow the waypoints to the Main Laboratory",
-        "Work with the AI to solve Binary Puzzle",
+        "Work with the AI to solve the Binary Puzzle",
         "Follow the waypoints to the Small Office",
-        "Work with the AI to solve Pattern Puzzle",
+        "Work with the AI to solve the Pattern Puzzle",
         "Follow the waypoints to the Server Room",
-        "Work with the AI to solve Geometry Puzzle"
+        "Work with the AI to solve the Geometry Puzzle"
     };
 	// Use this for initialization
 	void Start ()
     {
-        roomNameText.text = m_roomName[6];
+		m_roomNo = 6;
+		m_agentObjectiveTextScript = GetComponent<AgentObjectiveText> ();
+		roomNameText.text = m_roomName[m_roomNo];
         objectiveText.text = string.Format("Current Objective: {0}", m_objectives[m_currentObjectiveInt]);
+		mapButtonLength = mapLocations.Length;
+		m_locationSprites = new Sprite[mapButtonLength];
+		for (int i = 0; i < mapButtonLength; i++) 
+		{
+			m_locationSprites [i] = mapLocations [i].GetComponent<Image> ().sprite;
+		}
+		UpdateMapLocation ();
     }
     /*
     intro:
@@ -47,6 +65,7 @@ public class CheckRoom : MonoBehaviour
         5. Unlock the Safe
         6. Go to the elevator
     */
+
     bool m_introObjectives = true;
     int m_roomNo = 1;
     bool m_checkingWait;
@@ -58,6 +77,8 @@ public class CheckRoom : MonoBehaviour
         {
             m_roomNo = other.gameObject.GetComponent<CurrentRoom>().currentRoom;
             roomNameText.text = m_roomName[m_roomNo];
+
+			UpdateMapLocation ();
 
             if (m_roomNo == m_waitRoom)
                 m_checkingWait = true;
@@ -92,6 +113,22 @@ public class CheckRoom : MonoBehaviour
             */
         }
 	}
+
+	void UpdateMapLocation()
+	{
+		for (int i = 0; i < mapButtonLength; i++) 
+		{
+			if (i == m_roomNo) 
+			{
+				mapLocations [i].GetComponent<Image> ().sprite = standingMan;
+			} 
+			else 
+			{
+				mapLocations [i].GetComponent<Image> ().sprite = m_locationSprites [i];
+			}
+		}
+	}
+
 
     private int m_waitRoom;
     private float m_waitTime;
@@ -130,6 +167,7 @@ public class CheckRoom : MonoBehaviour
 
     public void UpdateObjectiveText()
     {
+		m_agentObjectiveTextScript.CompletedTask ();
         m_currentObjectiveInt += 1;
         
         if(m_currentObjectiveInt >= m_objectives.Length)

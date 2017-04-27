@@ -38,9 +38,11 @@ Lightbulb - http://simpleicon.com/light-bulb-3.html
 Camera - https://pixabay.com/p-159582/?no_redirect
 Padlock - http://www.clker.com/cliparts/B/1/y/Z/B/s/padlock-icon-hi.png
 folder - http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/document-icon.png
+Man -  Icon made by Freepik from www.flaticon.com 
 
 Fonts:
 Blocktopia				- http://www.dafont.com/blocktopia.font
 Bebas					- http://www.dafont.com/bebas.font?back=theme
 Hammer Keys				- http://www.dafont.com/hammer-keys.font
 Traveling Typewriter	- http://www.dafont.com/traveling-typewriter.font?back=theme
+

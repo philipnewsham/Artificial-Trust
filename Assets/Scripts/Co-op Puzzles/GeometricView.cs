@@ -17,7 +17,7 @@ public class GeometricView : MonoBehaviour
 	{
 		m_doorController = GetComponent<BinaryDecipher>().doorController;
 	}
-
+	public Animator[] artAnim;
     public Button[] changeViewButtons;
     public void ChangePicture(int direction)
     {
@@ -31,11 +31,20 @@ public class GeometricView : MonoBehaviour
         m_currentRotation = new Vector3(artObjects[0].transform.eulerAngles.x, artObjects[0].transform.eulerAngles.y, artObjects[0].transform.eulerAngles.z);
         if (m_currentSprite == -1)
             m_currentSprite = differentViewSprites.Length - 1;
-        //StartCoroutine("SpinArt");
+		//original spins
+        /*StartCoroutine("SpinArt");
         for (int i = 0; i < artObjects.Length; i++)
         {
             artObjects[i].transform.eulerAngles = m_nextRotation[m_currentSprite % differentViewSprites.Length];
         }
+        */
+		for (int i = 0; i < artAnim.Length; i++) 
+		{
+			if (direction > 0)
+				artAnim [i].SetTrigger ("SpinF");
+			else
+				artAnim [i].SetTrigger ("SpinB");
+		}
         mainImage.sprite = differentViewSprites[m_currentSprite % differentViewSprites.Length];
     }
     float count;

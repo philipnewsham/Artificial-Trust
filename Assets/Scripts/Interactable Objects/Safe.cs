@@ -63,7 +63,7 @@ public class Safe : MonoBehaviour
     
     // Use this for initialization
     void Start () {
-        m_safeLockScript = safeLock.GetComponent<SafeLocks>();
+        m_safeLockScript =  GetComponent<SafeLocks>();
         m_firstPersonControllerScript = scientist.GetComponent<FirstPersonController>();
         m_freezeControls = gameController.GetComponent<FreezeControls>();
         m_scientistWinScript = scientist.GetComponent<ScientistWin>();
