@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class ScientistRaycast : MonoBehaviour 
+public class ScientistRaycast : MonoBehaviour
 {
     public float distance;
     private float m_distance
@@ -18,12 +18,16 @@ public class ScientistRaycast : MonoBehaviour
 
     private bool m_showingRules;
     public GameObject scientistRules;//and don't you forget it!
-	private bool m_hoverLook;
+    private bool m_hoverLook;
 
-	public Image waitImage;
-	public float maxHold;
-	private float m_count;
+    public Image waitImage;
+    public float maxHold;
+    private float m_count;
 
+    private string[] m_interactionInfo = string[10]
+        {
+        "Unlock the safe to access secret documents!","These filing cabinets have passwords hidden in them, search through to find out","Flip these switches to make different effects happen, press the button on the right to activate", ""
+        };
     // Use this for initialization
     void Start () {
         interactText.text = "";
@@ -49,7 +53,8 @@ public class ScientistRaycast : MonoBehaviour
 	bool m_doneLooking;
 
 	public GameObject currentObjectiveUI;
-
+    int interactableID;
+    bool checkedOnce;
 	void Update ()
     {
         Vector3 origin = transform.position;
@@ -70,19 +75,25 @@ public class ScientistRaycast : MonoBehaviour
 				}
 				else 
 				{
+                    if(!checkedOnce)
+                    {
+                        interactableID = m_hit.collider.gameObject.GetComponent<InteractableObject>().interactableID;
+                        checkedOnce = true;
+                    }
 					m_isLooking = true;
 					m_count = 0;
 					interactText.text = "Interact!";
 					aButton.SetActive (true);
 					if (Input.GetButtonDown ("ControllerA") || Input.GetKeyDown (KeyCode.E))
                     {
-						gameController.InteractedWith (m_hit.collider.gameObject.GetComponent<InteractableObject> ().interactableID);
+						gameController.InteractedWith (/*m_hit.collider.gameObject.GetComponent<InteractableObject> ().*/interactableID);
 					}
 				}
 			} 
 			else 
 			{
 				StopLooking ();
+                checkedOnce = false;
 				interactText.text = "";
 				aButton.SetActive (false);
 			}
