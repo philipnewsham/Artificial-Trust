@@ -24,10 +24,39 @@ public class ScientistRaycast : MonoBehaviour
     public float maxHold;
     private float m_count;
 
-    private string[] m_interactionInfo = string[10]
+    private string[] m_interactionInfo = new string[12]
         {
-        "Unlock the safe to access secret documents!","These filing cabinets have passwords hidden in them, search through to find out","Flip these switches to make different effects happen, press the button on the right to activate", ""
+        "Unlock the safe to access secret documents!",
+        "These filing cabinets have passwords hidden in them, search through to find out",
+        "Flip these switches to make different effects happen, press the button on the right to activate", 
+        "Hit this button to perform the switches action",
+        "Read this to find out what switch positions (in the server room) do what",
+        "Warning: Do not press this button unless you are confident in what it does",
+        "Unlocks doors. Green: Unlocked, Red: Locked (Takes longer to open), Black: Open",
+        "Switches a light on or off",
+        "Disables the camera, stopping the AI from seeing from it",
+        "Unlock the computer to access information that the AI isn't giving you",
+        "Check map to see current location and objectives, alternatively press the start button",
+        "Have all of these switches on to open the AI core, allowing you to destroy it if necessary"
         };
+    private int[] m_intToInfo = new int[48]
+    {
+        0,
+        1,1,1,
+        2,2,2,
+        3,
+        4,
+        5,
+        6,6,6,6,6,6,6,6,6,6,
+        7,7,7,7,7,7,7,7,7,7,
+        8,8,8,8,8,8,8,8,8,8,
+        9,
+        10,
+        -1,-1,-1,
+        11,11,11,
+    };
+    public Text interactionInfoText;
+    public GameObject interactionInfoPanel;
     // Use this for initialization
     void Start () {
         interactText.text = "";
@@ -75,9 +104,11 @@ public class ScientistRaycast : MonoBehaviour
 				}
 				else 
 				{
-                    if(!checkedOnce)
+                    if (!checkedOnce)
                     {
                         interactableID = m_hit.collider.gameObject.GetComponent<InteractableObject>().interactableID;
+                        interactionInfoText.text = m_interactionInfo[m_intToInfo[interactableID]];
+                        interactionInfoPanel.SetActive(true);
                         checkedOnce = true;
                     }
 					m_isLooking = true;
@@ -94,6 +125,7 @@ public class ScientistRaycast : MonoBehaviour
 			{
 				StopLooking ();
                 checkedOnce = false;
+                interactionInfoPanel.SetActive(false);
 				interactText.text = "";
 				aButton.SetActive (false);
 			}

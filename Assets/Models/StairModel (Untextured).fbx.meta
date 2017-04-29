@@ -1,28 +1,27 @@
 fileFormatVersion: 2
-guid: 11ce2ad7b31ffe441999f44b2a06ed63
-timeCreated: 1490287459
-licenseType: Pro
+guid: 199fc7a8e3b556b41b095067c5fbb8f1
+timeCreated: 1493483955
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: pCube3
-    100006: transform1
-    100008: transform2
-    100010: //RootNode
-    400000: pCube1
-    400002: pCube2
-    400004: pCube3
-    400006: transform1
-    400008: transform2
-    400010: //RootNode
-    2300000: pCube3
+    100000: floor5
+    100002: floor6
+    100004: floor9
+    100006: //RootNode
+    100008: transform3
+    100010: transform4
+    400000: floor5
+    400002: floor6
+    400004: floor9
+    400006: //RootNode
+    400008: transform3
+    400010: transform4
+    2300000: floor9
     2300002: //RootNode
-    3300000: pCube3
+    3300000: floor9
     3300002: //RootNode
-    4300000: pCube3
-    4300002: wall_Stright_
+    4300000: floor9
     9500000: //RootNode
   materials:
     importMaterials: 1

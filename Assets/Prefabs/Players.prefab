@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 114228413149198600}
   - component: {fileID: 114016673585314356}
   - component: {fileID: 114995470350117872}
+  - component: {fileID: 114589004541224154}
+  - component: {fileID: 114996487731806410}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Agent
@@ -294,7 +296,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013820731908}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 12.83, y: 1, z: 3.66}
+  m_LocalPosition: {x: 13.2, y: 1, z: 2.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000011805695356}
@@ -1034,13 +1036,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8818ce2ad5ee5ec499b5f527dc8d4b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2
+  distance: 5
   gameController: {fileID: 0}
   interactText: {fileID: 0}
   aButton: {fileID: 0}
   scientistRules: {fileID: 0}
   waitImage: {fileID: 0}
   maxHold: 2
+  interactionInfoText: {fileID: 0}
+  interactionInfoPanel: {fileID: 0}
+  currentObjectiveUI: {fileID: 0}
+  freezeControlScript: {fileID: 0}
 --- !u!114 &114000012318166052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1131,6 +1137,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   cameras:
   - {fileID: 0}
   - {fileID: 0}
@@ -1182,6 +1189,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentCameraNo: 0
+  roomNameText: {fileID: 0}
 --- !u!114 &114000012717913248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1200,6 +1208,10 @@ MonoBehaviour:
   scientistRules: {fileID: 0}
   waitImage: {fileID: 0}
   maxHold: 0
+  interactionInfoText: {fileID: 0}
+  interactionInfoPanel: {fileID: 0}
+  currentObjectiveUI: {fileID: 0}
+  freezeControlScript: {fileID: 0}
 --- !u!114 &114000014040284594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1272,6 +1284,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightController: {fileID: 114000012333467278}
   objectiveText: {fileID: 0}
+--- !u!114 &114589004541224154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e9a0bd1ad87bf4a8a14c485d339249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainObjective: 0
+  completedMission: 0
 --- !u!114 &114693778341400078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1322,7 +1347,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNameText: {fileID: 0}
   objectiveText: {fileID: 0}
+  mapLocations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  standingMan: {fileID: 21300000, guid: a42dea5138264ae4799245aa2b6c1775, type: 3}
+  wayPoint: {fileID: 21300000, guid: 47afd5732a829764fbff38242a8d4c62, type: 3}
   aiObjectiveScript: {fileID: 114849526035745462}
+--- !u!114 &114996487731806410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013820731908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02d8bf11fa79d240817d147f683b6f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!124 &124000010667702992
 Behaviour:
   m_ObjectHideFlags: 1
