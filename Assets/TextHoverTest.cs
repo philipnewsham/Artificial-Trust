@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TextHoverTest : MonoBehaviour {
-    public Color32[] imageColours;
-    public Color32[] textColours;
+    private Color32[] imageColours = new Color32[2];
+    private Color32[] textColours = new Color32[2];
     private Text[] m_text;
     private Image m_image;
 
@@ -13,6 +13,11 @@ public class TextHoverTest : MonoBehaviour {
     {
         m_text = GetComponentsInChildren<Text>();
         m_image = GetComponentInChildren<Image>();
+        imageColours[0] = m_image.color;
+        imageColours[1] = m_text[0].color;
+
+        textColours[0] = imageColours[1];
+        textColours[1] = imageColours[0];
         HoverOver(false);
     }
 	public void HoverOver (bool isHovering)

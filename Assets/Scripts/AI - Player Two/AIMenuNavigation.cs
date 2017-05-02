@@ -30,15 +30,16 @@ public class AIMenuNavigation : MonoBehaviour
     }
 
     public Text hoverText;
-    private string[] m_hoverTextString = new string[7]
+    private string[] m_hoverTextString = new string[8]
     {
         "Open map to control the power",
         "Open document page to gather information",
         "Open robotic locks to gain access to robot body",
         "Open to find out your current objective",
         "Open cameras to find out where the agent is",
-        "Error. Unknown what will happen when button is pressed",
-        ""
+        "Send a message directly to the agent",
+        "",
+        "Error. Unknown what will happen when button is pressed"
     };
 
     public void HoverText(int panelNo)
