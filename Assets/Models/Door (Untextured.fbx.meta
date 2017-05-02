@@ -1,16 +1,50 @@
 fileFormatVersion: 2
-guid: ebf3f043052f79c4fa530904e3316acf
-timeCreated: 1493499968
+guid: dcb5ed19339c7c14eb83a44b65cbf4f1
+timeCreated: 1493552705
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: corridorCorner
-    4300002: corridorCorner1
+    100000: door
+    100002: //RootNode
+    100004: DoorFrame
+    100006: floor
+    100008: pCube4
+    100010: pCube6
+    100012: pCylinder1
+    100014: transform3
+    100016: transform4
+    100018: transform5
+    100020: transform6
+    100022: transform7
+    100024: transform8
+    100026: transform9
+    100028: wall_Stright_
+    100030: wall_Stright_2
+    100032: wall_Stright_3
+    400000: door
+    400002: //RootNode
+    400004: DoorFrame
+    400006: floor
+    400008: pCube4
+    400010: pCube6
+    400012: pCylinder1
+    400014: transform3
+    400016: transform4
+    400018: transform5
+    400020: transform6
+    400022: transform7
+    400024: transform8
+    400026: transform9
+    400028: wall_Stright_
+    400030: wall_Stright_2
+    400032: wall_Stright_3
+    2300000: door
+    2300002: DoorFrame
+    3300000: door
+    3300002: DoorFrame
+    4300000: DoorFrame
+    4300002: door
     9500000: //RootNode
   materials:
     importMaterials: 1

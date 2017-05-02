@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ebf3f043052f79c4fa530904e3316acf
-timeCreated: 1493499968
+guid: 39f03ca73d2cc8e4e8084cfa8a4398e2
+timeCreated: 1493645577
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: corridorCorner
-    4300002: corridorCorner1
+    4300000: wall_Stright_5
     9500000: //RootNode
   materials:
     importMaterials: 1

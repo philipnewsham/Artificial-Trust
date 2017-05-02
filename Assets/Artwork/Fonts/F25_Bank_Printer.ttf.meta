@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 111e870efab759542a977e4055478261
+timeCreated: 1493656554
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: F25 Bank Printer
+  fontNames:
+  - F25 Bank Printer
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

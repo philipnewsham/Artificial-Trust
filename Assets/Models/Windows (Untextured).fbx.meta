@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: ebf3f043052f79c4fa530904e3316acf
-timeCreated: 1493499968
+guid: 3f70477bead18f349890a8d4068a617c
+timeCreated: 1493572178
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: corridorCorner
-    4300002: corridorCorner1
+    100000: roomCorner4
+    100002: roomCorner6
+    100004: roomCorner7
+    100006: transform10
+    100008: transform11
+    100010: //RootNode
+    400000: roomCorner4
+    400002: roomCorner6
+    400004: roomCorner7
+    400006: transform10
+    400008: transform11
+    400010: //RootNode
+    2300000: roomCorner7
+    3300000: roomCorner7
+    4300000: roomCorner7
     9500000: //RootNode
   materials:
     importMaterials: 1
