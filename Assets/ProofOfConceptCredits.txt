@@ -1,4 +1,4 @@
-Proof of Concept (Credits):
+Artificial Trust (Credits):
 Sound Effects:
 Light Switch	-	https://www.freesound.org/people/HunteR4708/sounds/256835/
 Paper Flip		-	https://www.freesound.org/people/gynation/sounds/82377/
@@ -39,6 +39,7 @@ Camera - https://pixabay.com/p-159582/?no_redirect
 Padlock - http://www.clker.com/cliparts/B/1/y/Z/B/s/padlock-icon-hi.png
 folder - http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/document-icon.png
 Man -  Icon made by Freepik from www.flaticon.com 
+Robot - <a href='http://www.freepik.com/free-vector/black-robot-silhouettes_714901.htm'>Designed by Freepik</a>
 
 Fonts:
 Blocktopia				- http://www.dafont.com/blocktopia.font

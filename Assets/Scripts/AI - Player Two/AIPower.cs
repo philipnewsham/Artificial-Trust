@@ -158,7 +158,7 @@ public class AIPower : MonoBehaviour
     {
         for (int i = 0; i < powerText.Length; i++)
         {
-            powerText[i].text = string.Format("Current Power: {0} pow", m_totalPower);
+            powerText[i].text = string.Format("Current Power: {0}", m_totalPower);
         }
     }
 

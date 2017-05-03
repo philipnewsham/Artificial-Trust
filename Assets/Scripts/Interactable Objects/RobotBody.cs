@@ -51,6 +51,13 @@ public class RobotBody : MonoBehaviour {
 
     public void PoweringUp()
     {
+        if(!m_poweringUp)
+        {
+            m_currentPower = m_aiPower.CurrentPower();
+            m_aiPower.PowerExchange(-m_currentPower);
+            m_poweringUp = true;
+        }
+        /*
         if (!m_poweringUp)
         {
             float percentage = Mathf.FloorToInt(choosePowerSlider.value);
@@ -66,7 +73,9 @@ public class RobotBody : MonoBehaviour {
             {
                 print("Not enough Power");
             }
+            
         }
+        */
     }
 
     public void StopPowering()
@@ -105,9 +114,21 @@ public class RobotBody : MonoBehaviour {
 
     void CheckLocks()
     {
-        poweredText.text = string.Format("Lock Status (Power): Unlocked = {0}", m_poweredLock);
-        passwordText.text = string.Format("Lock Status (Password): Unlocked = {0}", m_passwordLock);
-        switchesText.text = string.Format("Lock Status (Switches): Unlocked = {0}", m_switchLock);
+        if(m_poweredLock)
+            poweredText.text = string.Format("<color=#00FF00>Lock Status (Power): Unlocked = {0}</color>", m_poweredLock);
+        else
+            poweredText.text = string.Format("<color=red>Lock Status (Power): Unlocked = {0}</color>", m_poweredLock);
+
+        if(m_passwordLock)
+            passwordText.text = string.Format("<color=#00FF00>Lock Status (Password): Unlocked = {0}</color>", m_passwordLock);
+        else
+            passwordText.text = string.Format("<color=red>Lock Status (Password): Unlocked = {0}</color>", m_passwordLock);
+
+        if(m_switchLock)
+            switchesText.text = string.Format("<color=#00FF00>Lock Status (Switches): Unlocked = {0}</color>", m_switchLock);
+        else
+            switchesText.text = string.Format("<color=red>Lock Status (Switches): Unlocked = {0}</color>", m_switchLock);
+
         if (m_poweredLock && m_passwordLock && m_switchLock)
         {
             enterRobotButton.interactable = true;

@@ -88,7 +88,7 @@ public class ThreeSwitches : MonoBehaviour {
             }
             if(m_actionNumber[i] == 3)
             {
-                robotBodySwitches.text = string.Format("{0}", m_switchPositions[i]);
+                robotBodySwitches.text = string.Format("Switches are required to be at: {0}", m_switchPositions[i]);
             }
         }
         ScientistSwitchInfo();
@@ -148,7 +148,7 @@ public class ThreeSwitches : MonoBehaviour {
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 0 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[5]; }
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 0) { m_currentNumber = m_actionNumber[6]; }
         if (m_switchPostionInt[0] == 1 && m_switchPostionInt[1] == 1 && m_switchPostionInt[2] == 1) { m_currentNumber = m_actionNumber[7]; }
-        currentSwitchesText.text = string.Format("{0},{1},{2}", m_switchPostionInt[0], m_switchPostionInt[1], m_switchPostionInt[2]);
+        currentSwitchesText.text = string.Format("Switches are currently at: {0},{1},{2}", m_switchPostionInt[0], m_switchPostionInt[1], m_switchPostionInt[2]);
         }
     /*
     void Switches()
